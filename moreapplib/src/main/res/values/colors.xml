@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--ff2196F3-->
+    <!--49a5ef-->
+    <color name="colorPrimary">#50a8ef</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="black_overlay">#66000000</color>
+
+    <color name="white">#FFF</color>
+    <color name="teal">#009587</color>
+    <color name="green">#4BAE4F</color>
+    <color name="light_green">#8AC249</color>
+</resources>

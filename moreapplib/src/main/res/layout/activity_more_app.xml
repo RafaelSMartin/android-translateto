@@ -1,0 +1,45 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+
+    <RelativeLayout
+        android:id="@+id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+        <ImageView
+            android:id="@+id/back_image_view"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="16dp"
+            app:srcCompat="@drawable/ic_arrow_back_white_48dp" />
+
+        <TextView
+            android:id="@+id/more_app_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/more_app"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+
+    <com.yarolegovich.discretescrollview.DiscreteScrollView
+        android:id="@+id/picker"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="false"
+        android:layout_below="@+id/toolbar_layout"
+        android:layout_centerInParent="false"
+        android:layout_marginTop="-24dp"
+        app:dsv_orientation="horizontal" />
+
+</RelativeLayout>

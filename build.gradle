@@ -1,0 +1,73 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5' // Add this line
+        classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2'
+
+
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+
+    repositories {
+        google()
+        jcenter()
+        flatDir{ dirs 'libs' }
+        maven { url 'https://jitpack.io' }
+        maven { url "https://maven.google.com" }
+    }
+
+    ext {
+
+        minSdk = 16
+        targetSdk = 27
+        buildToolsVersion = '26.0.2'
+        compileSdkVersion = 27
+
+        versionCode = 1
+        versionName = '1.0'
+
+        javaSourceCompatibility = JavaVersion.VERSION_1_8
+        javaTargetCompatibility = JavaVersion.VERSION_1_8
+
+        // Libraries
+        supportLibVersion = '27.1.0'
+        rxjava2Version = '2.0.7'
+        multiDexVersion = '1.0.3'
+        playServicesVersion = '11.8.0'
+
+        // Libraries for samples
+        butterknifeVersion = '8.8.1'
+        greenDaoVersion = '3.2.2'
+        materialDialogVersion = '0.9.5.0'
+        glideVersion = '3.7.0'
+        easyDeviceInfoVersion = '2.3.2'
+        shimmerLayoutVersion = '1.1.0'
+        gsonVersion = '2.8.2'
+        volleyVersion = '1.1.0'
+        frescoVersion = '1.5.0'
+        jsoupVersion = '1.10.1'
+        lottieVersion = '2.2.5'
+        checkoutVersion = '1.2.1'
+        paypalVersion = '2.15.3'
+
+    }
+
+}
+
+
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

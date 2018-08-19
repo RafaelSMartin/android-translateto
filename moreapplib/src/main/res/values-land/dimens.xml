@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="background_height">100dp</dimen>
+    <dimen name="more_app_cad_width">180dp</dimen>
+    <dimen name="more_app_cad_height">255dp</dimen>
+
+    <dimen name="content_top_margin">-24dp</dimen>
+    <dimen name="app_icon_size">52dp</dimen>
+
+    <dimen name="text_top_margin">4dp</dimen>
+    <dimen name="sub_text_top_margin">4dp</dimen>
+    <dimen name="app_name_text_size">14dp</dimen>
+    <dimen name="app_description_text_size">10dp</dimen>
+
+    <dimen name="play_store_icon_width">74dp</dimen>
+    <dimen name="play_store_margin">0dp</dimen>
+
+    <dimen name="free_text_size">14sp</dimen>
+    <dimen name="free_card_width">64dp</dimen>
+    <dimen name="free_card_height">32dp</dimen>
+</resources>
