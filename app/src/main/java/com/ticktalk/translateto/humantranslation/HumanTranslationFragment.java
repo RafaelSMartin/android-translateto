@@ -207,7 +207,6 @@ public class HumanTranslationFragment extends Fragment implements
 
             @Override
             public void afterTextChanged(Editable editable) {
-                Log.d("addTextChangedListener7", editable+"");
 
             }
         });
