@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--CardView PERSONAL INFO-->
+        <android.support.v7.widget.CardView
+            android:id="@+id/profile_personal_info_cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:paddingBottom="@dimen/mal_baseline"
+            android:paddingTop="@dimen/mal_baseline"
+            card_view:cardCornerRadius="-3dp"
+            card_view:cardElevation="2dp"
+            android:layout_marginLeft="@dimen/card_margin_horizontal"
+            android:layout_marginRight="@dimen/card_margin_horizontal"
+            card_view:cardUseCompatPadding="true">
+            <!--Grupo de Items-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <!--Titulo de cardView-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/mal_baseline_half"
+                    android:layout_marginEnd="@dimen/mal_baseline"
+                    android:layout_marginLeft="@dimen/mal_baseline"
+                    android:layout_marginRight="@dimen/mal_baseline"
+                    android:layout_marginStart="@dimen/mal_baseline"
+                    android:layout_marginTop="@dimen/mal_baseline"
+                    android:text="PERSONAL INFO"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textColor="@color/colorPrimary" />
+
+                <!--Item dentro de cardView-->
+                <LinearLayout
+                    android:id="@+id/layout_profile_first_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/mal_baseline_half"
+                    android:paddingTop="@dimen/mal_baseline_half">
+                    <ImageView
+                        android:layout_width="@dimen/mal_action_item_image_width"
+                        android:layout_height="@dimen/mal_action_action_item_image_height"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="@dimen/mal_baseline_half"
+                        android:layout_marginLeft="@dimen/mal_baseline"
+                        android:layout_marginRight="@dimen/mal_baseline_half"
+                        android:layout_marginStart="@dimen/mal_baseline"
+                        android:adjustViewBounds="false"
+                        android:contentDescription="@string/mal_content_desc_action_icon"
+                        android:cropToPadding="false"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/profile_name" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="@dimen/mal_baseline"
+                        android:layout_marginLeft="@dimen/mal_baseline"
+                        android:layout_marginRight="@dimen/mal_baseline"
+                        android:layout_marginStart="@dimen/mal_baseline"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:minHeight="@dimen/mal_action_action_item_image_height"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/profile_first_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/first_name"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="@dimen/mal_action_item_image_width"
+                        android:layout_height="@dimen/mal_action_action_item_image_height"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="@dimen/mal_baseline_half"
+                        android:layout_marginLeft="@dimen/mal_baseline"
+                        android:layout_marginRight="@dimen/mal_baseline_half"
+                        android:layout_marginStart="@dimen/mal_baseline"
+                        android:adjustViewBounds="false"
+                        android:contentDescription="@string/mal_content_desc_action_icon"
+                        android:cropToPadding="false"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_arrow_right" />
+                </LinearLayout>
+                <!--Final Item de CardView-->
+
+                <!--Item dentro de cardView-->
+                <LinearLayout
+                    android:id="@+id/layout_profile_last_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/mal_baseline_half"
+                    android:paddingTop="@dimen/mal_baseline_half">
+
+                    <ImageView
+                        android:layout_width="@dimen/mal_action_item_image_width"
+                        android:layout_height="@dimen/mal_action_action_item_image_height"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="@dimen/mal_baseline_half"
+                        android:layout_marginLeft="@dimen/mal_baseline"
+                        android:layout_marginRight="@dimen/mal_baseline_half"
+                        android:layout_marginStart="@dimen/mal_baseline"
+                        android:adjustViewBounds="false"
+                        android:contentDescription="@string/mal_content_desc_action_icon"
+                        android:cropToPadding="false"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/profile_name" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="@dimen/mal_baseline"
+                        android:layout_marginLeft="@dimen/mal_baseline"
+                        android:layout_marginRight="@dimen/mal_baseline"
+                        android:layout_marginStart="@dimen/mal_baseline"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:minHeight="@dimen/mal_action_action_item_image_height"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/profile_last_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/first_name"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="@dimen/mal_action_item_image_width"
+                        android:layout_height="@dimen/mal_action_action_item_image_height"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="@dimen/mal_baseline_half"
+                        android:layout_marginLeft="@dimen/mal_baseline"
+                        android:layout_marginRight="@dimen/mal_baseline_half"
+                        android:layout_marginStart="@dimen/mal_baseline"
+                        android:adjustViewBounds="false"
+                        android:contentDescription="@string/mal_content_desc_action_icon"
+                        android:cropToPadding="false"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_arrow_right" />
+                </LinearLayout>
+                <!--Final Item de CardView-->
+
+                <!--Item dentro de cardView-->
+                <LinearLayout
+                    android:id="@+id/layout_profile_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/mal_baseline"
+                    android:paddingTop="@dimen/mal_baseline_half">
+
+                    <ImageView
+                        android:layout_width="@dimen/mal_action_item_image_width"
+                        android:layout_height="@dimen/mal_action_action_item_image_height"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="@dimen/mal_baseline_half"
+                        android:layout_marginLeft="@dimen/mal_baseline"
+                        android:layout_marginRight="@dimen/mal_baseline_half"
+                        android:layout_marginStart="@dimen/mal_baseline"
+                        android:adjustViewBounds="false"
+                        android:contentDescription="@string/mal_content_desc_action_icon"
+                        android:cropToPadding="false"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/profile_email" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="@dimen/mal_baseline"
+                        android:layout_marginLeft="@dimen/mal_baseline"
+                        android:layout_marginRight="@dimen/mal_baseline"
+                        android:layout_marginStart="@dimen/mal_baseline"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:minHeight="@dimen/mal_action_action_item_image_height"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/profile_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/email"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="@dimen/mal_action_item_image_width"
+                        android:layout_height="@dimen/mal_action_action_item_image_height"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="@dimen/mal_baseline_half"
+                        android:layout_marginLeft="@dimen/mal_baseline"
+                        android:layout_marginRight="@dimen/mal_baseline_half"
+                        android:layout_marginStart="@dimen/mal_baseline"
+                        android:adjustViewBounds="false"
+                        android:contentDescription="@string/mal_content_desc_action_icon"
+                        android:cropToPadding="false"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_arrow_right" />
+                </LinearLayout>
+                <!--Final Item de CardView-->
+            </LinearLayout>
+            <!--Final grupo de Items-->
+        </android.support.v7.widget.CardView>
+        <!--Final Item de CardView-->
+
+
+        <!--CardView NATIVE LANGUAGE-->
+        <android.support.v7.widget.CardView
+            android:id="@+id/profile_native_language_cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:paddingBottom="@dimen/mal_baseline"
+            android:paddingTop="@dimen/mal_baseline"
+            card_view:cardCornerRadius="-3dp"
+            card_view:cardElevation="2dp"
+            android:layout_marginLeft="@dimen/card_margin_horizontal"
+            android:layout_marginRight="@dimen/card_margin_horizontal"
+            card_view:cardUseCompatPadding="true"
+            app:layout_constraintTop_toBottomOf="@+id/profile_personal_info_cardView">
+            <!--Grupo de Items-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <!--Titulo de cardView-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/mal_baseline_half"
+                    android:layout_marginEnd="@dimen/mal_baseline"
+                    android:layout_marginLeft="@dimen/mal_baseline"
+                    android:layout_marginRight="@dimen/mal_baseline"
+                    android:layout_marginStart="@dimen/mal_baseline"
+                    android:layout_marginTop="@dimen/mal_baseline"
+                    android:text="NATIVE LANGUAGE"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textColor="@color/colorPrimary" />
+
+
+                <!--Item dentro de cardView-->
+                <RelativeLayout
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:id="@+id/layout_profile_native_language"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/mal_baseline"
+                    android:paddingTop="@dimen/mal_baseline_half">
+
+                    <!--<ImageView-->
+                    <!--android:layout_width="@dimen/mal_action_item_image_width"-->
+                    <!--android:layout_height="@dimen/mal_action_action_item_image_height"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:layout_marginEnd="@dimen/mal_baseline_half"-->
+                    <!--android:layout_marginLeft="@dimen/mal_baseline"-->
+                    <!--android:layout_marginRight="@dimen/mal_baseline_half"-->
+                    <!--android:layout_marginStart="@dimen/mal_baseline"-->
+                    <!--android:adjustViewBounds="false"-->
+                    <!--android:contentDescription="@string/mal_content_desc_action_icon"-->
+                    <!--android:cropToPadding="false"-->
+                    <!--android:scaleType="centerInside"-->
+                    <!--android:src="@drawable/profile_native_language" />-->
+
+                    <!--<LinearLayout-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center_vertical"-->
+                    <!--android:layout_marginEnd="@dimen/mal_baseline"-->
+                    <!--android:layout_marginLeft="@dimen/mal_baseline"-->
+                    <!--android:layout_marginRight="@dimen/mal_baseline"-->
+                    <!--android:layout_marginStart="@dimen/mal_baseline"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:minHeight="@dimen/mal_action_action_item_image_height"-->
+                    <!--android:orientation="vertical">-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/profile_native_language"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="@string/native_language"-->
+                    <!--android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />-->
+                    <!--</LinearLayout>-->
+                    <android.support.v7.widget.AppCompatSpinner
+                        android:paddingLeft="10dp"
+                        android:paddingStart="10dp"
+                        android:id="@+id/native_language_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/custom_spinner_transparent" />
+
+                    <ImageView
+                        android:layout_width="@dimen/mal_action_item_image_width"
+                        android:layout_height="@dimen/mal_action_action_item_image_height"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_marginRight="8dp"
+                        android:adjustViewBounds="false"
+                        android:contentDescription="@string/mal_content_desc_action_icon"
+                        android:cropToPadding="false"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_arrow_right" />
+                </RelativeLayout>
+                <!--Final Item de CardView-->
+            </LinearLayout>
+
+            <!--Final grupo de Items-->
+        </android.support.v7.widget.CardView>
+        <!--Final Item de CardView-->
+
+
+        <!--CardView CHANGE PASSWORD-->
+        <android.support.v7.widget.CardView
+            android:id="@+id/profile_change_password_cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:paddingBottom="@dimen/mal_baseline"
+            android:paddingTop="@dimen/mal_baseline"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_native_language_cardView"
+            card_view:cardCornerRadius="-3dp"
+            card_view:cardElevation="2dp"
+            card_view:cardUseCompatPadding="true">
+            <!--Grupo de Items-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <!--Titulo de cardView-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/mal_baseline_half"
+                    android:layout_marginEnd="@dimen/mal_baseline"
+                    android:layout_marginLeft="@dimen/mal_baseline"
+                    android:layout_marginRight="@dimen/mal_baseline"
+                    android:layout_marginStart="@dimen/mal_baseline"
+                    android:layout_marginTop="@dimen/mal_baseline"
+                    android:text="CHANGE PASSWORD"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textColor="@color/colorPrimary" />
+
+                <!--Item dentro de cardView-->
+                <LinearLayout
+                    android:id="@+id/layout_profile_old_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/mal_baseline_half"
+                    android:paddingTop="@dimen/mal_baseline_half">
+
+                    <ImageView
+                        android:layout_width="@dimen/mal_action_item_image_width"
+                        android:layout_height="@dimen/mal_action_action_item_image_height"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="@dimen/mal_baseline_half"
+                        android:layout_marginLeft="@dimen/mal_baseline"
+                        android:layout_marginRight="@dimen/mal_baseline_half"
+                        android:layout_marginStart="@dimen/mal_baseline"
+                        android:adjustViewBounds="false"
+                        android:contentDescription="@string/mal_content_desc_action_icon"
+                        android:cropToPadding="false"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/profile_password" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="@dimen/mal_baseline"
+                        android:layout_marginLeft="@dimen/mal_baseline"
+                        android:layout_marginRight="@dimen/mal_baseline"
+                        android:layout_marginStart="@dimen/mal_baseline"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:minHeight="@dimen/mal_action_action_item_image_height"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/profile_old_password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/password_cod"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="@dimen/mal_action_item_image_width"
+                        android:layout_height="@dimen/mal_action_action_item_image_height"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="@dimen/mal_baseline_half"
+                        android:layout_marginLeft="@dimen/mal_baseline"
+                        android:layout_marginRight="@dimen/mal_baseline_half"
+                        android:layout_marginStart="@dimen/mal_baseline"
+                        android:adjustViewBounds="false"
+                        android:contentDescription="@string/mal_content_desc_action_icon"
+                        android:cropToPadding="false"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_arrow_right" />
+                </LinearLayout>
+            </LinearLayout>
+            <!--Final grupo de Items-->
+        </android.support.v7.widget.CardView>
+        <!--Final Item de CardView-->
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v4.widget.NestedScrollView>

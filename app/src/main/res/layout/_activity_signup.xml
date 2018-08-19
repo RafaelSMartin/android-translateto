@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="@string/app_name"
+            app:titleTextAppearance="@style/ToolbarTextAppearance.Title"
+            style="@style/MyToolbar"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Account Benefits-->
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_numero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            card_view:cardCornerRadius="2dp"
+            card_view:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    style="@style/SignInTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/title_benefits" />
+
+                <TextView
+                    style="@style/SignInSubTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/subtitle_human"
+                    android:textColor="@color/colorPrimary" />
+                <TextView
+                    style="@style/SignInText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/text_human" />
+
+                <TextView
+                    style="@style/SignInSubTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/subtile_favorites"
+                    android:textColor="@color/colorPrimary" />
+                <TextView
+                    style="@style/SignInText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/text_favorites" />
+
+                <TextView
+                    style="@style/SignInSubTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/subtitle_history"
+                    android:textColor="@color/colorPrimary" />
+                <TextView
+                    style="@style/SignInText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/text_history" />
+
+                <TextView
+                    style="@style/SignInSubTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/subtitle_community"
+                    android:textColor="@color/colorPrimary" />
+                <TextView
+                    style="@style/SignInText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/text_community" />
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView> <!--Final Account Benefits-->
+
+
+        <!-- SignUp -->
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_sign_up"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:paddingBottom="@dimen/mal_baseline"
+            android:paddingTop="@dimen/mal_baseline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card_numero"
+            card_view:cardCornerRadius="-3dp"
+            card_view:cardElevation="2dp"
+            card_view:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/sign_up_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center"
+                    android:text="@string/title_signup"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="22sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/card_numero" />
+
+                <!-- First name -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:paddingRight="24dp">
+
+                    <ImageView
+                        android:layout_width="@dimen/mal_action_item_image_width"
+                        android:layout_height="@dimen/mal_action_action_item_image_height"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="@dimen/mal_baseline_half"
+                        android:layout_marginLeft="@dimen/mal_baseline"
+                        android:layout_marginRight="@dimen/mal_baseline_half"
+                        android:layout_marginStart="@dimen/mal_baseline"
+                        android:layout_marginTop="@dimen/mal_baseline_half"
+                        android:src="@drawable/profile_name" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/first_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:hintTextAppearance="@style/MyHintText"
+                        app:layout_constraintTop_toBottomOf="@+id/sign_up_title">
+
+                        <EditText
+                            android:id="@+id/ed_first_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:ems="10"
+                            android:hint="@string/first_name"
+                            android:inputType="textPersonName"
+                            android:theme="@style/MyEditText" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <!-- Last name -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:paddingRight="24dp">
+
+                    <ImageView
+                        android:layout_width="@dimen/mal_action_item_image_width"
+                        android:layout_height="@dimen/mal_action_action_item_image_height"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="@dimen/mal_baseline_half"
+                        android:layout_marginLeft="@dimen/mal_baseline"
+                        android:layout_marginRight="@dimen/mal_baseline_half"
+                        android:layout_marginStart="@dimen/mal_baseline"
+                        android:layout_marginTop="@dimen/mal_baseline_half"
+                        android:src="@drawable/profile_name" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/last_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:hintTextAppearance="@style/MyHintText"
+                        app:layout_constraintTop_toBottomOf="@+id/first_name">
+
+                        <EditText
+                            android:id="@+id/ed_last_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:ems="10"
+                            android:hint="@string/last_name"
+                            android:inputType="textPersonName"
+                            android:theme="@style/MyEditText" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <!-- Email -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:paddingRight="24dp">
+
+                    <ImageView
+                        android:layout_width="@dimen/mal_action_item_image_width"
+                        android:layout_height="@dimen/mal_action_action_item_image_height"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="@dimen/mal_baseline_half"
+                        android:layout_marginLeft="@dimen/mal_baseline"
+                        android:layout_marginRight="@dimen/mal_baseline_half"
+                        android:layout_marginStart="@dimen/mal_baseline"
+                        android:layout_marginTop="@dimen/mal_baseline_half"
+                        android:src="@drawable/profile_email" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:hintTextAppearance="@style/MyHintText"
+                        app:layout_constraintTop_toBottomOf="@+id/last_name">
+
+                        <EditText
+                            android:id="@+id/ed_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:ems="10"
+                            android:hint="@string/email"
+                            android:inputType="textEmailAddress"
+                            android:theme="@style/MyEditText" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <!-- Password -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:paddingRight="24dp">
+
+                    <ImageView
+                        android:layout_width="@dimen/mal_action_item_image_width"
+                        android:layout_height="@dimen/mal_action_action_item_image_height"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="@dimen/mal_baseline_half"
+                        android:layout_marginLeft="@dimen/mal_baseline"
+                        android:layout_marginRight="@dimen/mal_baseline_half"
+                        android:layout_marginStart="@dimen/mal_baseline"
+                        android:layout_marginTop="@dimen/mal_baseline_half"
+                        android:src="@drawable/profile_password" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:hintTextAppearance="@style/MyHintText"
+                        app:layout_constraintTop_toBottomOf="@+id/email">
+
+                        <EditText
+                            android:id="@+id/ed_password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:ems="10"
+                            android:hint="@string/password"
+                            android:inputType="textPassword"
+                            android:theme="@style/MyEditText" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <!-- Confirm Pass-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:layout_marginTop="8dp"
+                    android:paddingRight="24dp">
+
+                    <ImageView
+                        android:layout_width="@dimen/mal_action_item_image_width"
+                        android:layout_height="@dimen/mal_action_action_item_image_height"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="@dimen/mal_baseline_half"
+                        android:layout_marginLeft="@dimen/mal_baseline"
+                        android:layout_marginRight="@dimen/mal_baseline_half"
+                        android:layout_marginStart="@dimen/mal_baseline"
+                        android:layout_marginTop="@dimen/mal_baseline_half"
+                        android:src="@drawable/profile_password" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/confirm_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:hintTextAppearance="@style/MyHintText"
+                        app:layout_constraintTop_toBottomOf="@+id/password">
+
+                        <EditText
+                            android:id="@+id/ed_confirm_password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:ems="10"
+                            android:hint="@string/confirm_pass"
+                            android:inputType="textPassword"
+                            android:theme="@style/MyEditText" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView> <!--Final SignUp-->
+
+
+        <!-- Title Native Language-->
+        <TextView
+            android:textColor="@android:color/black"
+            android:id="@+id/tv_title_signup_native_language"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:text="Tell us which is your native language"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card_sign_up" />
+
+        <!-- CardView Spinner Native Language-->
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_native_language"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:foregroundGravity="center"
+            android:paddingBottom="@dimen/mal_baseline"
+            android:paddingTop="@dimen/mal_baseline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_signup_native_language"
+            card_view:cardCornerRadius="-3dp"
+            card_view:cardElevation="2dp"
+            card_view:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                android:id="@+id/layout_signup_native_language"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/mal_baseline_half"
+                android:paddingTop="@dimen/mal_baseline_half">
+
+                <android.support.v7.widget.AppCompatSpinner
+                    android:id="@+id/native_language_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/custom_spinner_transparent"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingStart="10dp" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView> <!--Final Spinner Native Language-->
+
+        <!-- Button SignUp-->
+        <Button
+            android:id="@+id/button_sign_up"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:text="@string/sign_up"
+            android:textColor="@color/blanco"
+            android:theme="@style/MyButtonLogin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card_native_language" />
+
+        <!-- Sign Up Label-->
+        <TextView
+            android:id="@+id/link_login"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/login_text"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_sign_up" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v4.widget.NestedScrollView>

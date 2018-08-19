@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.AppBarLayout
+    android:id="@+id/app_bar_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:titleTextColor="@color/white">
+
+        <RelativeLayout
+            android:id="@+id/main_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/search_image"
+                android:layout_width="?attr/actionBarSize"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/setting_image"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="@string/history_search_button"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:visibility="visible"
+                app:srcCompat="@drawable/ic_settings_white_48dp" />
+
+            <ImageView
+                android:id="@+id/setting_image"
+                android:layout_width="?attr/actionBarSize"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="@string/setting_button"
+                android:padding="16dp"
+                android:visibility="visible"
+                app:srcCompat="@drawable/ic_settings_white_48dp" />
+
+            <LinearLayout
+                android:id="@+id/spinner_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@+id/search_image"
+                android:layout_toStartOf="@+id/search_image"
+                android:visibility="visible">
+
+                <Spinner
+                    android:id="@+id/fromSpin"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:contentDescription="@string/first_language_spinner"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/from_language_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="TextView"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/swap"
+                    android:layout_width="48dp"
+                    android:layout_height="56dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="?attr/selectableItemBackground"
+                    android:contentDescription="@string/swap_button"
+                    android:padding="8dp"
+                    app:srcCompat="@drawable/ic_swap_horiz_white_48dp" />
+
+                <TextView
+                    android:id="@+id/to_language_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="TextView"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/toSpin"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:contentDescription="@string/second_language_spinner"
+                    android:gravity="start"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+</android.support.design.widget.AppBarLayout>
+
+
