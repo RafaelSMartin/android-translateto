@@ -1,0 +1,96 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.example.webservicesvolley"
+
+        minSdkVersion rootProject.ext.minSdk
+        targetSdkVersion rootProject.ext.targetSdk
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+
+    greendao {
+        schemaVersion 1
+    }
+
+    compileOptions {
+        sourceCompatibility rootProject.ext.javaSourceCompatibility
+        targetCompatibility rootProject.ext.javaTargetCompatibility
+    }
+}
+
+
+
+dependencies {
+
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation(name: 'ticktalk-helper-1.1.1', ext: 'aar')
+    implementation project(path: ':moreapplib')
+    implementation project(path: ':material-about')
+    implementation project(path: ':shimmer-android-0.1.0')
+
+    implementation "com.android.support:multidex:$rootProject.ext.multiDexVersion"
+    implementation "com.android.support:cardview-v7:$rootProject.ext.supportLibVersion"
+    implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibVersion"
+    implementation "com.android.support:design:$rootProject.ext.supportLibVersion"
+    implementation "com.android.support:recyclerview-v7:$rootProject.ext.supportLibVersion"
+
+
+    implementation "com.google.android.gms:play-services-ads:$rootProject.ext.playServicesVersion"
+
+    implementation "com.android.volley:volley:$rootProject.ext.volleyVersion"
+    implementation "com.google.code.gson:gson:$rootProject.ext.gsonVersion"
+    implementation "org.greenrobot:greendao:$rootProject.ext.greenDaoVersion"
+    implementation "com.facebook.fresco:fresco:$rootProject.ext.frescoVersion"
+    implementation "org.jsoup:jsoup:$rootProject.ext.jsoupVersion"
+
+    implementation "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
+
+    implementation "io.supercharge:shimmerlayout:$rootProject.ext.shimmerLayoutVersion"
+    implementation "com.afollestad.material-dialogs:core:$rootProject.ext.materialDialogVersion"
+    implementation "com.afollestad.material-dialogs:commons:$rootProject.ext.materialDialogVersion"
+    implementation "com.github.nisrulz:easydeviceinfo-base:$rootProject.ext.easyDeviceInfoVersion"
+    implementation "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
+    implementation "com.airbnb.android:lottie:$rootProject.ext.lottieVersion"
+
+//    implementation 'org.solovyev.android:checkout:' + rootProject.ext.checkoutVersion
+    implementation "com.paypal.sdk:paypal-android-sdk:$rootProject.ext.paypalVersion"
+
+
+
+
+
+
+
+
+
+
+
+}
