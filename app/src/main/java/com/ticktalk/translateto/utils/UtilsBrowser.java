@@ -8,7 +8,7 @@ import android.support.v4.content.ContextCompat;
 import android.view.MenuItem;
 
 /**
- * Created by Indogroup02 on 12/01/2018.
+ * Created by Rafael S. Martin
  */
 
 public class UtilsBrowser {

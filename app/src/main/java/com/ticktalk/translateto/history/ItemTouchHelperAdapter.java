@@ -1,7 +1,7 @@
 package com.ticktalk.translateto.history;
 
 /**
- * Created by Indogroup02 on 23/01/2018.
+ * Created by Rafael S. Martin
  */
 public interface ItemTouchHelperAdapter {
 

@@ -38,25 +38,18 @@ import com.ticktalk.translateto.webservicesvolley.sendpojo.SendLogin;
 
 
 /**
- * Created by Indogroup02 on 16/11/2017.
+ * Created by Rafael S. Martin
  */
 
-public class SettingFragment extends MaterialAboutFragment implements
-        Response.ErrorListener,
-        Response.Listener<String>
-{
+public class SettingFragment extends MaterialAboutFragment implements Response.ErrorListener,
+        Response.Listener<String> {
 
     public static final String TAG = "SETTING_FRAGMENT";
+
     private Context myContext;
     private boolean isLogged;
-
     private SendLogin sendLogin;
     private LoginPojo model;
-
-
-
-
-
 
     @Override
     protected MaterialAboutList getMaterialAboutList(Context context) {
@@ -79,9 +72,7 @@ public class SettingFragment extends MaterialAboutFragment implements
                         if(isLogged){
                             Utils.launchActivity(HumanTranslationActivity.class, getActivity());
                         } else{
-//                            Utils.launchActivity(LoginActivity.class, getActivity());
                             LoginActivity.startLoginActivity(getActivity());
-
                         }
                     }
                 })
@@ -94,12 +85,7 @@ public class SettingFragment extends MaterialAboutFragment implements
                     .setOnClickAction(new MaterialAboutItemOnClickAction() {
                         @Override
                         public void onClick() {
-//                            ProfileActivity.startProfileActivity(getActivity());
-//                            Utils.launchActivity(ProfileActivity.class, getActivity());
                             ProfileActivity.startProfileActivity(getActivity());
-//                            SessionPrefs.get(myContext).logOut();
-//                            Toast.makeText(myContext, "ir a profile", Toast.LENGTH_SHORT).show();
-//                            launchActivityLoggedIn(LoginActivity.class);
                         }
                     })
                     .build());
@@ -120,7 +106,6 @@ public class SettingFragment extends MaterialAboutFragment implements
                     .setOnClickAction(new MaterialAboutItemOnClickAction() {
                         @Override
                         public void onClick() {
-//                            Utils.launchActivity(LoginActivity.class, getActivity());
                             LoginActivity.startLoginActivity(getActivity());
                         }
                     })

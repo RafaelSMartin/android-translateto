@@ -6,7 +6,7 @@ import android.support.v7.widget.helper.ItemTouchHelper.Callback;
 import static android.support.v7.widget.helper.ItemTouchHelper.*;
 
 /**
- * Created by Indogroup02 on 23/01/2018.
+ * Created by Rafael S. Martin
  */
 
 public class SwipeController extends Callback {

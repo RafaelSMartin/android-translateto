@@ -22,7 +22,7 @@ import com.ticktalk.translateto.R;
 
 import static com.ticktalk.helper.Helper.openUrl;
 /**
- * Created by Indogroup02 on 04/12/2017.
+ * Created by Rafael S. Martin
  */
 
 public class _OldProfileFragment extends MaterialAboutFragment

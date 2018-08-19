@@ -10,7 +10,7 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * Created by Indogroup02 on 17/01/2018.
+ * Created by Rafael S. Martin
  */
 
 public class DatabaseManager {

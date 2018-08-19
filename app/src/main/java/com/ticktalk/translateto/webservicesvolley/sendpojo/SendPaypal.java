@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by Indogroup02 on 13/03/2018.
+ * Created by Rafael S. Martin
  */
 
 public class SendPaypal {

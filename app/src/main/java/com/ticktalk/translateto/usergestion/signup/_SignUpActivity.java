@@ -53,7 +53,7 @@ import static com.ticktalk.translateto.spinner.ArraySpinner.countryNames;
 import static com.ticktalk.translateto.spinner.ArraySpinner.flags;
 
 /**
- * Created by Indogroup02 on 20/11/2017.
+ * Created by Rafael S. Martin
  */
 
 public class _SignUpActivity extends AppCompatActivity implements

@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.ticktalk.translateto.R;
 
 /**
- * Created by Indogroup02 on 23/11/2017.
+ * Created by Rafael S. Martin
  */
 
 public class CustomAdapter extends BaseAdapter {

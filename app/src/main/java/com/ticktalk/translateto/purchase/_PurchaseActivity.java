@@ -35,7 +35,7 @@ import butterknife.ButterKnife;
 import static android.app.Activity.RESULT_OK;
 
 /**
- * Created by Indogroup02 on 08/03/2018.
+ * Created by Rafael S. Martin
  */
 
 public class _PurchaseActivity extends AppCompatActivity implements

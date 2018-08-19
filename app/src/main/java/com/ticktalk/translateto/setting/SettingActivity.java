@@ -17,19 +17,12 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class SettingActivity extends AppCompatActivity implements
-        Toolbar.OnMenuItemClickListener
-{
-
-    SettingFragment settingFragment;
+public class SettingActivity extends AppCompatActivity implements Toolbar.OnMenuItemClickListener {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
-
-    public static void startSettingActivity(Activity startingActivity)
-    {
-
+    public static void startSettingActivity(Activity startingActivity) {
         Intent intent = new Intent(startingActivity, SettingActivity.class);
         startingActivity.startActivity(intent);
 //        startingActivity.overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
@@ -39,28 +32,19 @@ public class SettingActivity extends AppCompatActivity implements
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_setting);
         ButterKnife.bind(this);
 
         initToolbar();
 
-
-        settingFragment = (SettingFragment) getSupportFragmentManager().findFragmentByTag(SettingFragment.TAG);
+        SettingFragment settingFragment = (SettingFragment) getSupportFragmentManager().findFragmentByTag(SettingFragment.TAG);
         if(settingFragment == null) {
             settingFragment = new SettingFragment();
-
             getSupportFragmentManager()
                     .beginTransaction()
                     .setCustomAnimations(R.anim.slide_in_right, R.anim.hold, R.anim.hold, R.anim.slide_out_right)
                     .replace(R.id.setting_fragment_root, settingFragment, SettingFragment.TAG)
                     .commit();
-
-//            FragmentHelper.FragmentHelperBuilder.create(this)
-//                    .fragment(settingFragment)
-//                    .layout(R.id.setting_fragment_root)
-//                    .tag(SettingFragment.TAG)
-//                    .replace();
         }
 
     }
@@ -70,12 +54,7 @@ public class SettingActivity extends AppCompatActivity implements
         toolbar.setOnMenuItemClickListener(this);
         toolbar.setTitle("Settings");
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_24dp);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                onBackPressed();
-            }
-        });
+        toolbar.setNavigationOnClickListener(v -> onBackPressed());
     }
 
     @Override
@@ -95,7 +74,6 @@ public class SettingActivity extends AppCompatActivity implements
         }
         return true;
     }
-
 
 
 }

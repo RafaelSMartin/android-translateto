@@ -22,7 +22,7 @@ import butterknife.ButterKnife;
 import static com.ticktalk.helper.Helper.launchActivity;
 
 /**
- * Created by Indogroup02 on 26/01/2018.
+ * Created by Rafael S. Martin
  */
 
 public class FavoriteActivity extends AppCompatActivity implements

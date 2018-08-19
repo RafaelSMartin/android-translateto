@@ -27,7 +27,7 @@ import github.nisrulz.easydeviceinfo.base.EasyAppMod;
 import github.nisrulz.easydeviceinfo.base.EasyDeviceMod;
 
 /**
- * Created by Indogroup02 on 20/12/2017.
+ * Created by Rafael S. Martin
  */
 
 public class Utils extends AppCompatActivity {

@@ -51,7 +51,7 @@ import static com.ticktalk.translateto.humantranslation.HumanTranslationFragment
 import static com.ticktalk.translateto.humantranslation.HumanTranslationFragment.total_words;
 
 /**
- * Created by Indogroup02 on 09/03/2018.
+ * Created by Rafael S. Martin
  */
 
 public class PaymentDetailsFragment extends Fragment implements

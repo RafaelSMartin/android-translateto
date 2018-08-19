@@ -1,7 +1,7 @@
 package com.ticktalk.translateto.accountmanager;
 
 /**
- * Created by Indogroup02 on 04/01/2018.
+ * Created by Rafael S. Martin
  */
 
 public final class AccountConstants {

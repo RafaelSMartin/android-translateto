@@ -52,7 +52,7 @@ import com.ticktalk.translateto.webservicesvolley.DefaultExclusionStrategy;
 import static com.ticktalk.translateto.utils.Utils.isConnection;
 
 /**
- * Created by Indogroup02 on 02/02/2018.
+ * Created by Rafael S. Martin
  */
 
 public class LoginFragment extends Fragment implements

@@ -10,7 +10,7 @@ import android.util.Log;
 import static android.content.ContentValues.TAG;
 
 /**
- * Created by Indogroup02 on 04/01/2018.
+ * Created by Rafael S. Martin
  */
 
 public class UserAccountUtil {

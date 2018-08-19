@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import java.util.List;
 
 /**
- * Created by Indogroup02 on 23/11/2017.
+ * Created by Rafael S. Martin
  */
 
 public class MyAdapter extends ArrayAdapter {

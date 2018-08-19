@@ -35,10 +35,8 @@ import com.ticktalk.translateto.webservicesvolley.sendpojo.SendLogin;
 import static com.ticktalk.translateto.spinner.ArraySpinner.countryNames;
 
 /**
- * Created by Indogroup02 on 29/11/2017.
+ * Created by Rafael S. Martin
  */
-
-
 
 
 public class CustomDialog extends DialogFragment implements

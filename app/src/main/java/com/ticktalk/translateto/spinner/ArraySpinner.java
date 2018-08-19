@@ -5,7 +5,7 @@ import android.content.Context;
 import com.ticktalk.translateto.R;
 
 /**
- * Created by Indogroup02 on 14/12/2017.
+ * Created by Rafael S. Martin
  */
 public class ArraySpinner {
 

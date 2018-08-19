@@ -1,7 +1,7 @@
 package com.ticktalk.translateto.utils;
 
 /**
- * Created by indogroup on 12/20/17.
+ * Created by Rafael S. Martin
  */
 
 public interface AppUtil {

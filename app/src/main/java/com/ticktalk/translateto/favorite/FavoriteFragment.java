@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Indogroup02 on 26/01/2018.
+ * Created by Rafael S. Martin
  */
 
 public class FavoriteFragment extends Fragment {

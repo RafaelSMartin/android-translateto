@@ -7,7 +7,7 @@ import android.text.TextUtils;
 import com.ticktalk.translateto.webservicesvolley.pojo.LoginPojo;
 
 /**
- * Created by Indogroup02 on 29/11/2017.
+ * Created by Rafael S. Martin
  */
 
 public class SessionPrefs {

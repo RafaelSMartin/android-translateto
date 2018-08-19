@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 /**
- * Created by Indogroup02 on 18/12/2017.
+ * Created by Rafael S. Martin
  */
 
 public class SynonymsPojo {

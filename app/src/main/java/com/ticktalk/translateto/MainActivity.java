@@ -297,7 +297,7 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //Arranca TTS y envia y espera datos
+        //Arranca TTS, envia y espera datos
         Intent intent = new Intent();
         intent.setAction(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
         startActivityForResult(intent, 0);

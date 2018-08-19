@@ -6,8 +6,6 @@ import android.os.IBinder;
 import android.support.annotation.Nullable;
 
 
-
-
 public class AuthenticatorService extends Service {
 
     // Instance field that stores the authenticator object

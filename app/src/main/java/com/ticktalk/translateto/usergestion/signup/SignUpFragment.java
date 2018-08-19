@@ -53,7 +53,7 @@ import static com.ticktalk.translateto.spinner.ArraySpinner.flags;
 import static com.ticktalk.translateto.utils.Utils.isConnection;
 
 /**
- * Created by Indogroup02 on 02/02/2018.
+ * Created by Rafael S. Martin
  */
 
 public class SignUpFragment extends Fragment implements

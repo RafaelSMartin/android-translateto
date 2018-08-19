@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 
 /**
- * Created by Indogroup02 on 07/03/2018.
+ * Created by Rafael S. Martin
  */
 
 public class HumanPojo {

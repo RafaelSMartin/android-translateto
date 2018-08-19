@@ -7,7 +7,7 @@ import org.greenrobot.greendao.annotation.Transient;
 import org.greenrobot.greendao.annotation.Generated;
 
 /**
- * Created by Indogroup02 on 17/01/2018.
+ * Created by Rafael S. Martin
  */
 
 @Entity

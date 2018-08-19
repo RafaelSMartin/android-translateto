@@ -22,7 +22,7 @@ import static com.ticktalk.translateto.spinner.ArraySpinner.countryNames;
 import static com.ticktalk.translateto.spinner.ArraySpinner.flags;
 
 /**
- * Created by Indogroup02 on 19/01/2018.
+ * Created by Rafael S. Martin
  */
 
 public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>

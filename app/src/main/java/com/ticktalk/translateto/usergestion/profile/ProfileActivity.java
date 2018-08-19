@@ -19,7 +19,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by Indogroup02 on 04/12/2017.
+ * Created by Rafael S. Martin
  */
 
 public class ProfileActivity extends AppCompatActivity implements

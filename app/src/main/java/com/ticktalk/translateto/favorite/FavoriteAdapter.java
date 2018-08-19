@@ -24,7 +24,7 @@ import static com.ticktalk.translateto.spinner.ArraySpinner.countryNames;
 import static com.ticktalk.translateto.spinner.ArraySpinner.flags;
 
 /**
- * Created by Indogroup02 on 26/01/2018.
+ * Created by Rafael S. Martin
  */
 
 public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.FavoriteViewHolder>

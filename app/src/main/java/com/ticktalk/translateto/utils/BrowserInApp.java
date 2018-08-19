@@ -27,7 +27,7 @@ import butterknife.ButterKnife;
 
 
 /**
- * Created by Indogroup02 on 11/01/2018.
+ * Created by Rafael S. Martin
  */
 
 public class BrowserInApp extends AppCompatActivity implements Toolbar.OnMenuItemClickListener

@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.provider.OpenableColumns;
 
 /**
- * Created by indogroup on 12/20/17.
+ * Created by Rafael S. Martin
  */
 
 public class AppUtilImpl implements AppUtil {

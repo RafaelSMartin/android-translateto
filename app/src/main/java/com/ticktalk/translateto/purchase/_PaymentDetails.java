@@ -1,7 +1,7 @@
 package com.ticktalk.translateto.purchase;
 
 /**
- * Created by Indogroup02 on 08/03/2018.
+ * Created by Rafael S. Martin
  */
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
