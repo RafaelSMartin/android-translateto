@@ -17,7 +17,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.ticktalk.translateto.fragments.ForgotPassDialogFragment;
-import com.ticktalk.translateto.SessionPrefs;
+import com.ticktalk.translateto.database.SessionPrefs;
 import com.ticktalk.translateto.R;
 
 import java.util.Locale;

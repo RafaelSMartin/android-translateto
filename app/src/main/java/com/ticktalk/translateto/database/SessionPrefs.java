@@ -1,10 +1,10 @@
-package com.ticktalk.translateto;
+package com.ticktalk.translateto.database;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
 
-import com.ticktalk.translateto.webservicesvolley.pojo.LoginPojo;
+import com.ticktalk.translateto.remote.model.LoginPojo;
 
 /**
  * Created by Rafael S. Martin

@@ -30,11 +30,11 @@ import com.ticktalk.translateto.activities.LoginActivity;
 import com.ticktalk.translateto.activities.ProfileActivity;
 import com.ticktalk.translateto.utils.Utils;
 import com.ticktalk.translateto.activities.HumanTranslationActivity;
-import com.ticktalk.translateto.SessionPrefs;
-import com.ticktalk.translateto.webservicesvolley.DefaultExclusionStrategy;
-import com.ticktalk.translateto.webservicesvolley.pojo.LoginPojo;
+import com.ticktalk.translateto.database.SessionPrefs;
+import com.ticktalk.translateto.remote.DefaultExclusionStrategy;
+import com.ticktalk.translateto.remote.model.LoginPojo;
 import com.ticktalk.translateto.R;
-import com.ticktalk.translateto.webservicesvolley.sendpojo.SendLogin;
+import com.ticktalk.translateto.remote.sendmodel.SendLogin;
 
 
 /**

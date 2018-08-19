@@ -39,15 +39,15 @@ import com.ticktalk.translateto.database.DatabaseManager;
 import com.ticktalk.translateto.database.FromResult;
 import com.ticktalk.translateto.database.ToResult;
 import com.ticktalk.translateto.utils.Utils;
-import com.ticktalk.translateto.SessionPrefs;
+import com.ticktalk.translateto.database.SessionPrefs;
 import com.ticktalk.translateto.adapters.CustomAdapter;
-import com.ticktalk.translateto.webservicesvolley.DefaultExclusionStrategy;
-import com.ticktalk.translateto.webservicesvolley.pojo.MessagePojo;
+import com.ticktalk.translateto.remote.DefaultExclusionStrategy;
+import com.ticktalk.translateto.remote.model.MessagePojo;
 import com.ticktalk.translateto.R;
-import com.ticktalk.translateto.webservicesvolley.sendpojo.SendMessage;
+import com.ticktalk.translateto.remote.sendmodel.SendMessage;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.ticktalk.translateto.webservicesvolley.pojo.SynonymsPojo;
+import com.ticktalk.translateto.remote.model.SynonymsPojo;
 
 import org.jsoup.Jsoup;
 
@@ -60,9 +60,9 @@ import butterknife.ButterKnife;
 import static com.ticktalk.translateto.utils.Utils.clearFirtsAndLast;
 import static com.ticktalk.translateto.utils.Utils.clearText;
 import static com.ticktalk.translateto.utils.Utils.hideSoftKeyboard;
-import static com.ticktalk.translateto.ArraySpinner.countryCodes;
-import static com.ticktalk.translateto.ArraySpinner.countryNames;
-import static com.ticktalk.translateto.ArraySpinner.flags;
+import static com.ticktalk.translateto.utils.ArraySpinner.countryCodes;
+import static com.ticktalk.translateto.utils.ArraySpinner.countryNames;
+import static com.ticktalk.translateto.utils.ArraySpinner.flags;
 import static com.ticktalk.translateto.utils.Utils.paroImpar;
 
 public class MainActivity extends AppCompatActivity implements

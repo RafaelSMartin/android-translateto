@@ -26,12 +26,12 @@ import com.google.gson.GsonBuilder;
 import com.ticktalk.translateto.App;
 import com.ticktalk.translateto.activities.MainActivity;
 import com.ticktalk.translateto.R;
-import com.ticktalk.translateto.SessionPrefs;
+import com.ticktalk.translateto.database.SessionPrefs;
 import com.ticktalk.translateto.utils.Constant;
 import com.ticktalk.translateto.utils.Utils;
-import com.ticktalk.translateto.webservicesvolley.DefaultExclusionStrategy;
-import com.ticktalk.translateto.webservicesvolley.pojo.HumanPojo;
-import com.ticktalk.translateto.webservicesvolley.sendpojo.SendHuman;
+import com.ticktalk.translateto.remote.DefaultExclusionStrategy;
+import com.ticktalk.translateto.remote.model.HumanPojo;
+import com.ticktalk.translateto.remote.sendmodel.SendHuman;
 
 import org.json.JSONException;
 import org.json.JSONObject;

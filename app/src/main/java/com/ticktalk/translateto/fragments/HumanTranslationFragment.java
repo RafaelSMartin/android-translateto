@@ -28,11 +28,11 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 
 import com.ticktalk.translateto.R;
-import com.ticktalk.translateto.SessionPrefs;
+import com.ticktalk.translateto.database.SessionPrefs;
 import com.ticktalk.translateto.activities.SettingActivity;
 import com.ticktalk.translateto.adapters.CustomAdapter;
 import com.ticktalk.translateto.utils.Utils;
-import com.ticktalk.translateto.webservicesvolley.pojo.HumanPojo;
+import com.ticktalk.translateto.remote.model.HumanPojo;
 import com.ticktalk.translateto.utils.Constant;
 
 import java.util.ArrayList;
@@ -41,9 +41,9 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-import static com.ticktalk.translateto.ArraySpinner.countryCodes;
-import static com.ticktalk.translateto.ArraySpinner.countryNames;
-import static com.ticktalk.translateto.ArraySpinner.flags;
+import static com.ticktalk.translateto.utils.ArraySpinner.countryCodes;
+import static com.ticktalk.translateto.utils.ArraySpinner.countryNames;
+import static com.ticktalk.translateto.utils.ArraySpinner.flags;
 
 /**
  * Created by Rafael S. Martin

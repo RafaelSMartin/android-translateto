@@ -22,8 +22,8 @@ import com.android.volley.VolleyError;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.ticktalk.translateto.R;
-import com.ticktalk.translateto.webservicesvolley.DefaultExclusionStrategy;
-import com.ticktalk.translateto.webservicesvolley.pojo.HumanPojo;
+import com.ticktalk.translateto.remote.DefaultExclusionStrategy;
+import com.ticktalk.translateto.remote.model.HumanPojo;
 
 import org.json.JSONException;
 import org.json.JSONObject;

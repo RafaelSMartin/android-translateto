@@ -1,4 +1,4 @@
-package com.ticktalk.translateto;
+package com.ticktalk.translateto.utils;
 
 import android.content.Context;
 

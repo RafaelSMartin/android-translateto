@@ -18,8 +18,8 @@ import com.ticktalk.translateto.history.ItemTouchHelperAdapter;
 
 import java.util.List;
 
-import static com.ticktalk.translateto.ArraySpinner.countryNames;
-import static com.ticktalk.translateto.ArraySpinner.flags;
+import static com.ticktalk.translateto.utils.ArraySpinner.countryNames;
+import static com.ticktalk.translateto.utils.ArraySpinner.flags;
 
 /**
  * Created by Rafael S. Martin

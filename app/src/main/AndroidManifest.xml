@@ -46,9 +46,6 @@
 
         <activity android:name="com.ticktalk.translateto.activities.HumanTranslationActivity"/>
 
-        <activity android:name="com.ticktalk.translateto.utils.BrowserInApp"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
-
         <activity android:name="com.ticktalk.translateto.activities.HistoryActivity" />
 
         <activity android:name="com.ticktalk.translateto.activities.FavoriteActivity" />

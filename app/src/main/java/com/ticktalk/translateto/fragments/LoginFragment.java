@@ -20,18 +20,18 @@ import android.text.TextUtils;
 
 import com.ticktalk.translateto.activities.LoginActivity;
 import com.ticktalk.translateto.activities.MainActivity;
-import com.ticktalk.translateto.SessionPrefs;
+import com.ticktalk.translateto.database.SessionPrefs;
 import com.ticktalk.translateto.activities.SignUpActivity;
 import com.ticktalk.translateto.utils.Utils;
 import com.ticktalk.translateto.R;
-import com.ticktalk.translateto.webservicesvolley.pojo.LoginPojo;
-import com.ticktalk.translateto.webservicesvolley.sendpojo.SendLogin;
+import com.ticktalk.translateto.remote.model.LoginPojo;
+import com.ticktalk.translateto.remote.sendmodel.SendLogin;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import static android.support.v4.provider.FontsContractCompat.FontRequestCallback.RESULT_OK;
-import static com.ticktalk.translateto.ArraySpinner.countryNames;
+import static com.ticktalk.translateto.utils.ArraySpinner.countryNames;
 import static com.ticktalk.translateto.utils.Utils.hideSoftKeyboard;
 
 import com.android.volley.AuthFailureError;
@@ -47,7 +47,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.ticktalk.translateto.App;
 import com.ticktalk.translateto.utils.Constant;
-import com.ticktalk.translateto.webservicesvolley.DefaultExclusionStrategy;
+import com.ticktalk.translateto.remote.DefaultExclusionStrategy;
 
 import static com.ticktalk.translateto.utils.Utils.isConnection;
 

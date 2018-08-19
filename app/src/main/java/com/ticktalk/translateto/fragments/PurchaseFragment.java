@@ -20,7 +20,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.paypal.android.sdk.payments.PayPalConfiguration;
-import com.paypal.android.sdk.payments.PayPalPayment;
 import com.paypal.android.sdk.payments.PayPalService;
 import com.paypal.android.sdk.payments.PaymentActivity;
 import com.paypal.android.sdk.payments.PaymentConfirmation;
@@ -29,8 +28,6 @@ import com.ticktalk.translateto.activities.SettingActivity;
 import com.ticktalk.translateto.purchase._PaymentDetails;
 
 import org.json.JSONException;
-
-import java.math.BigDecimal;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -45,7 +42,7 @@ import static com.ticktalk.translateto.fragments.HumanTranslationFragment.tone_l
 import static com.ticktalk.translateto.fragments.HumanTranslationFragment.topic_language;
 import static com.ticktalk.translateto.fragments.HumanTranslationFragment.total_precio;
 import static com.ticktalk.translateto.fragments.HumanTranslationFragment.total_words;
-import static com.ticktalk.translateto.ArraySpinner.flags;
+import static com.ticktalk.translateto.utils.ArraySpinner.flags;
 
 
 /**

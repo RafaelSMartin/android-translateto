@@ -1,4 +1,4 @@
-package com.ticktalk.translateto.webservicesvolley;
+package com.ticktalk.translateto.remote;
 
 import com.google.gson.ExclusionStrategy;
 import com.google.gson.FieldAttributes;
