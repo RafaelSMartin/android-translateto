@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ticktalk.translateto">
+
+    <!-- To use Volley-->
+    <uses-permission
+        android:name="android.permission.AUTHENTICATE_ACCOUNTS"
+        android:maxSdkVersion="22" />
+    <uses-permission
+        android:name="android.permission.GET_ACCOUNTS"
+        android:maxSdkVersion="22" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+
+
+
+
+    <application
+        android:name="com.ticktalk.translateto.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:windowSoftInputMode="adjustResize"
+            android:name="com.ticktalk.translateto.MainActivity"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.ticktalk.translateto.usergestion.login._LoginActivity"/>
+
+        <activity android:name="com.ticktalk.translateto.usergestion.login._LoginForm"/>
+
+        <activity android:name="com.ticktalk.translateto.setting.SettingActivity"/>
+
+        <activity android:name="com.ticktalk.translateto.usergestion.profile.ProfileActivity"/>
+
+        <activity android:name="com.ticktalk.translateto.usergestion.signup._SignUpActivity"/>
+
+        <activity android:name="com.ticktalk.translateto.setting.MoreAppActivity"/>
+
+        <activity android:name="com.ticktalk.translateto.humantranslation.HumanTranslationActivity"/>
+
+        <activity android:name="com.ticktalk.translateto.utils.BrowserInApp"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+
+        <activity android:name="com.ticktalk.translateto.history.HistoryActivity" />
+
+        <activity android:name="com.ticktalk.translateto.favorite.FavoriteActivity" />
+
+        <activity android:name="com.ticktalk.translateto.usergestion.signup.SignUpActivity" />
+
+        <activity android:name="com.ticktalk.translateto.usergestion.login.LoginActivity" />
+        <activity android:name=".purchase._PaymentDetails" />
+
+        <service android:name="com.ticktalk.translateto.accountmanager.AuthenticatorService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator"/>
+            </intent-filter>
+
+            <meta-data
+                android:name="android.accounts.AccountAuthenticator"
+                android:resource="@xml/authenticator"/>
+        </service>
+
+
+    </application>
+
+</manifest>
