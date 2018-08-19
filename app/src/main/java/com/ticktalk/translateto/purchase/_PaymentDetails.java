@@ -23,44 +23,32 @@ import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.paypal.android.sdk.payments.PayPalOAuthScopes;
-import com.paypal.android.sdk.payments.PayPalProfileSharingActivity;
-import com.paypal.android.sdk.payments.PayPalService;
 import com.ticktalk.translateto.App;
-import com.ticktalk.translateto.MainActivity;
+import com.ticktalk.translateto.activities.MainActivity;
 import com.ticktalk.translateto.R;
-import com.ticktalk.translateto.sessionpref.SessionPrefs;
+import com.ticktalk.translateto.SessionPrefs;
 import com.ticktalk.translateto.utils.Constant;
 import com.ticktalk.translateto.utils.Utils;
 import com.ticktalk.translateto.webservicesvolley.DefaultExclusionStrategy;
 import com.ticktalk.translateto.webservicesvolley.pojo.HumanPojo;
 import com.ticktalk.translateto.webservicesvolley.sendpojo.SendHuman;
-import com.ticktalk.translateto.webservicesvolley.sendpojo.SendPaypal;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-
-import static com.ticktalk.translateto.humantranslation.HumanTranslationFragment.audience_gender;
-import static com.ticktalk.translateto.humantranslation.HumanTranslationFragment.audience_genderPos;
-import static com.ticktalk.translateto.humantranslation.HumanTranslationFragment.author_gender;
-import static com.ticktalk.translateto.humantranslation.HumanTranslationFragment.author_genderPos;
-import static com.ticktalk.translateto.humantranslation.HumanTranslationFragment.email_in;
-import static com.ticktalk.translateto.humantranslation.HumanTranslationFragment.instructions_language;
-import static com.ticktalk.translateto.humantranslation.HumanTranslationFragment.language_source;
-import static com.ticktalk.translateto.humantranslation.HumanTranslationFragment.language_target;
-import static com.ticktalk.translateto.humantranslation.HumanTranslationFragment.numero_language;
-import static com.ticktalk.translateto.humantranslation.HumanTranslationFragment.password_in;
-import static com.ticktalk.translateto.humantranslation.HumanTranslationFragment.text_translation;
-import static com.ticktalk.translateto.humantranslation.HumanTranslationFragment.tone_language;
-import static com.ticktalk.translateto.humantranslation.HumanTranslationFragment.tone_languagePos;
-import static com.ticktalk.translateto.humantranslation.HumanTranslationFragment.topic_language;
-import static com.ticktalk.translateto.humantranslation.HumanTranslationFragment.topic_languagePos;
-import static com.ticktalk.translateto.humantranslation.HumanTranslationFragment.total_precio;
-import static com.ticktalk.translateto.humantranslation.HumanTranslationFragment.total_words;
+import static com.ticktalk.translateto.fragments.HumanTranslationFragment.audience_genderPos;
+import static com.ticktalk.translateto.fragments.HumanTranslationFragment.author_genderPos;
+import static com.ticktalk.translateto.fragments.HumanTranslationFragment.email_in;
+import static com.ticktalk.translateto.fragments.HumanTranslationFragment.instructions_language;
+import static com.ticktalk.translateto.fragments.HumanTranslationFragment.language_source;
+import static com.ticktalk.translateto.fragments.HumanTranslationFragment.language_target;
+import static com.ticktalk.translateto.fragments.HumanTranslationFragment.numero_language;
+import static com.ticktalk.translateto.fragments.HumanTranslationFragment.password_in;
+import static com.ticktalk.translateto.fragments.HumanTranslationFragment.text_translation;
+import static com.ticktalk.translateto.fragments.HumanTranslationFragment.tone_languagePos;
+import static com.ticktalk.translateto.fragments.HumanTranslationFragment.topic_languagePos;
+import static com.ticktalk.translateto.fragments.HumanTranslationFragment.total_precio;
+import static com.ticktalk.translateto.fragments.HumanTranslationFragment.total_words;
 
 public class _PaymentDetails extends AppCompatActivity
         implements

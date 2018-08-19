@@ -1,17 +1,13 @@
 package com.ticktalk.translateto.purchase;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,17 +18,14 @@ import com.paypal.android.sdk.payments.PayPalService;
 import com.paypal.android.sdk.payments.PaymentActivity;
 import com.paypal.android.sdk.payments.PaymentConfirmation;
 import com.ticktalk.translateto.R;
-import com.ticktalk.translateto.setting.SettingActivity;
+import com.ticktalk.translateto.activities.SettingActivity;
 
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.math.BigDecimal;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
-import static android.app.Activity.RESULT_OK;
 
 /**
  * Created by Rafael S. Martin

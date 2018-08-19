@@ -29,7 +29,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:windowSoftInputMode="adjustResize"
-            android:name="com.ticktalk.translateto.MainActivity"
+            android:name="com.ticktalk.translateto.activities.MainActivity"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,44 +38,26 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.ticktalk.translateto.usergestion.login._LoginActivity"/>
+        <activity android:name="com.ticktalk.translateto.activities.SettingActivity"/>
 
-        <activity android:name="com.ticktalk.translateto.usergestion.login._LoginForm"/>
+        <activity android:name="com.ticktalk.translateto.activities.ProfileActivity"/>
 
-        <activity android:name="com.ticktalk.translateto.setting.SettingActivity"/>
+        <activity android:name="com.ticktalk.translateto.activities.MoreAppActivity"/>
 
-        <activity android:name="com.ticktalk.translateto.usergestion.profile.ProfileActivity"/>
-
-        <activity android:name="com.ticktalk.translateto.usergestion.signup._SignUpActivity"/>
-
-        <activity android:name="com.ticktalk.translateto.setting.MoreAppActivity"/>
-
-        <activity android:name="com.ticktalk.translateto.humantranslation.HumanTranslationActivity"/>
+        <activity android:name="com.ticktalk.translateto.activities.HumanTranslationActivity"/>
 
         <activity android:name="com.ticktalk.translateto.utils.BrowserInApp"
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
 
-        <activity android:name="com.ticktalk.translateto.history.HistoryActivity" />
+        <activity android:name="com.ticktalk.translateto.activities.HistoryActivity" />
 
-        <activity android:name="com.ticktalk.translateto.favorite.FavoriteActivity" />
+        <activity android:name="com.ticktalk.translateto.activities.FavoriteActivity" />
 
-        <activity android:name="com.ticktalk.translateto.usergestion.signup.SignUpActivity" />
+        <activity android:name="com.ticktalk.translateto.activities.SignUpActivity" />
 
-        <activity android:name="com.ticktalk.translateto.usergestion.login.LoginActivity" />
+        <activity android:name="com.ticktalk.translateto.activities.LoginActivity" />
+
         <activity android:name=".purchase._PaymentDetails" />
-
-        <service android:name="com.ticktalk.translateto.accountmanager.AuthenticatorService"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.accounts.AccountAuthenticator"/>
-            </intent-filter>
-
-            <meta-data
-                android:name="android.accounts.AccountAuthenticator"
-                android:resource="@xml/authenticator"/>
-        </service>
-
 
     </application>
 

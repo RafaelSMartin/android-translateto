@@ -8,7 +8,7 @@
     android:id="@+id/root_constraint_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.ticktalk.translateto.MainActivity">
+    tools:context="com.ticktalk.translateto.activities.MainActivity">
 
     <android.support.v4.widget.NestedScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -578,49 +578,7 @@
 
             </LinearLayout>
 
-
-            <!--</LinearLayout>-->
-
-            <Button
-                android:id="@+id/hacia_profile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Human Translation"
-                android:visibility="gone"
-                app:layout_constraintTop_toBottomOf="@+id/card_synonyms" />
-
-            <Button
-                android:id="@+id/hacia_registro"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="registro"
-                android:visibility="gone"
-                app:layout_constraintTop_toBottomOf="@+id/hacia_profile" />
-
-            <Button
-                android:id="@+id/hacia_login"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="login"
-                android:visibility="gone"
-                app:layout_constraintTop_toBottomOf="@+id/hacia_registro" />
-
-            <Button
-                android:id="@+id/hacia_profile_old"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="profile"
-                android:visibility="gone"
-                app:layout_constraintTop_toBottomOf="@+id/hacia_login" />
-
-
-
         </android.support.constraint.ConstraintLayout>
-
 
     </android.support.v4.widget.NestedScrollView>
 

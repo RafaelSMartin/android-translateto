@@ -16,8 +16,8 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import com.ticktalk.translateto.usergestion.login.ForgotPassDialogFragment;
-import com.ticktalk.translateto.sessionpref.SessionPrefs;
+import com.ticktalk.translateto.fragments.ForgotPassDialogFragment;
+import com.ticktalk.translateto.SessionPrefs;
 import com.ticktalk.translateto.R;
 
 import java.util.Locale;
@@ -215,7 +215,7 @@ public class Utils extends AppCompatActivity {
             contadorNombres++;
             cantidadNombres.nextToken();
         }
-        Log.d("MainSendContador", String.valueOf(contadorNombres));
+        Log.d("ContadorDePalabras", String.valueOf(contadorNombres));
         return  contadorNombres;
     }
 
