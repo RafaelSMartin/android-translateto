@@ -271,14 +271,15 @@ public class PurchaseFragment extends Fragment implements
 
     private void processPayment(){
 
-        PayPalPayment toBuy = new PayPalPayment(new BigDecimal(price), "USD",
-                "TranslateTo", PayPalPayment.PAYMENT_INTENT_SALE);
-
-        Intent intent = new Intent(activity, PaymentActivity.class);
-        intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, configuration);
-        intent.putExtra(PaymentActivity.EXTRA_PAYMENT, toBuy);
-
-        startActivityForResult(intent, PAYPAL_REQUEST_CODE);
+        /** Desabilitado hasta publicar **/
+//        PayPalPayment toBuy = new PayPalPayment(new BigDecimal(price), "USD",
+//                "TranslateTo", PayPalPayment.PAYMENT_INTENT_SALE);
+//
+//        Intent intent = new Intent(activity, PaymentActivity.class);
+//        intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, configuration);
+//        intent.putExtra(PaymentActivity.EXTRA_PAYMENT, toBuy);
+//
+//        startActivityForResult(intent, PAYPAL_REQUEST_CODE);
     }
 
     @Override
