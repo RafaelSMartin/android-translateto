@@ -1,4 +1,4 @@
-package com.ticktalk.translateto.fragments;
+package com.ticktalk.translateto.purchase;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;

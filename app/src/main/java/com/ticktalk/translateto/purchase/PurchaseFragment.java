@@ -1,4 +1,4 @@
-package com.ticktalk.translateto.fragments;
+package com.ticktalk.translateto.purchase;
 
 
 import android.app.Activity;
@@ -20,14 +20,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.paypal.android.sdk.payments.PayPalConfiguration;
+import com.paypal.android.sdk.payments.PayPalPayment;
 import com.paypal.android.sdk.payments.PayPalService;
 import com.paypal.android.sdk.payments.PaymentActivity;
 import com.paypal.android.sdk.payments.PaymentConfirmation;
 import com.ticktalk.translateto.R;
 import com.ticktalk.translateto.activities.SettingActivity;
-import com.ticktalk.translateto.purchase._PaymentDetails;
 
 import org.json.JSONException;
+
+import java.math.BigDecimal;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -73,7 +75,8 @@ public class PurchaseFragment extends Fragment implements
     // or live (ENVIRONMENT_PRODUCTION)
 
     private static final String CONFIG_CLIENT_ID =
-            "AbNv_uDfHr13Q-JS3Td-IB1taAW5IT9_Iv8XOIt-Nbeoy_McgqDfzPOaD2oh1phTp6zsXHNtJU4ckElw"; //for PaypalExample
+//            "AbNv_uDfHr13Q-JS3Td-IB1taAW5IT9_Iv8XOIt-Nbeoy_McgqDfzPOaD2oh1phTp6zsXHNtJU4ckElw";
+                "A-1BoYQl8TWUr0LobVP2Xr9V9pjGA-OXjmfKHqEYNXKcuGVejFpgXnbm";//for PaypalExample
 
     private static final int PAYPAL_REQUEST_CODE = 7171; //request
 
@@ -269,14 +272,14 @@ public class PurchaseFragment extends Fragment implements
     private void processPayment(){
 
         /** Desabilitado hasta publicar **/
-//        PayPalPayment toBuy = new PayPalPayment(new BigDecimal(price), "USD",
-//                "TranslateTo", PayPalPayment.PAYMENT_INTENT_SALE);
-//
-//        Intent intent = new Intent(activity, PaymentActivity.class);
-//        intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, configuration);
-//        intent.putExtra(PaymentActivity.EXTRA_PAYMENT, toBuy);
-//
-//        startActivityForResult(intent, PAYPAL_REQUEST_CODE);
+        PayPalPayment toBuy = new PayPalPayment(new BigDecimal(price), "USD",
+                "TranslateTo", PayPalPayment.PAYMENT_INTENT_SALE);
+
+        Intent intent = new Intent(activity, PaymentActivity.class);
+        intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, configuration);
+        intent.putExtra(PaymentActivity.EXTRA_PAYMENT, toBuy);
+
+        startActivityForResult(intent, PAYPAL_REQUEST_CODE);
     }
 
     @Override

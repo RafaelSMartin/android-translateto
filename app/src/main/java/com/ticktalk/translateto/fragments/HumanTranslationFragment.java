@@ -31,6 +31,7 @@ import com.ticktalk.translateto.R;
 import com.ticktalk.translateto.database.SessionPrefs;
 import com.ticktalk.translateto.activities.SettingActivity;
 import com.ticktalk.translateto.adapters.CustomAdapter;
+import com.ticktalk.translateto.purchase.PurchaseFragment;
 import com.ticktalk.translateto.utils.Utils;
 import com.ticktalk.translateto.remote.model.HumanPojo;
 import com.ticktalk.translateto.utils.Constant;
