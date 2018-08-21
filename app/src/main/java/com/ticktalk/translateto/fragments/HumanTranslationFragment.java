@@ -181,7 +181,8 @@ public class HumanTranslationFragment extends Fragment implements
                 total_precio = String.valueOf((double)Math.round(precio*100d)/100d);
                 total_words = String.valueOf(numberWords);
 
-                if(precio >= 10){
+                // Habilitar el pago si es 3€
+                if(precio >= 3){
                     submitOrder.setEnabled(true);
                     submitOrder.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
                 } else{
@@ -226,8 +227,11 @@ public class HumanTranslationFragment extends Fragment implements
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long l) {
                idiomasDestino.remove(0);
                idiomasDestino.add(0, countryNames[pos]);
-                Log.d("IDIOMA", parent.getItemAtPosition(pos).toString());
-                Log.d("IDIOMA", countryNames[pos]);
+                Log.d("IDIOMA11", parent.getItemAtPosition(pos).toString());
+                Log.d("IDIOMA12", countryNames[pos]);
+                Log.d("IDIOMA13", toMoreSpinner.getCount()+"");
+                Log.d("IDIOMA14", toMoreSpinner.getChildCount()+"");
+                Log.d("IDIOMA15", idiomasDestino.toString());
 
             }
 
@@ -378,13 +382,13 @@ public class HumanTranslationFragment extends Fragment implements
             lessLanguage.setVisibility(View.VISIBLE);
         } else{
             lessLanguage.setVisibility(View.INVISIBLE);
-
         }
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            //Boton que genera mas spinner
             case R.id.more_language:
                 toSpinnerMore = new Spinner(activity);
                 toSpinnerMore.setBackgroundResource(R.drawable.custom_spinner_background);
@@ -393,11 +397,12 @@ public class HumanTranslationFragment extends Fragment implements
 
 //                toSpinnerMore.getChildAt()
 
-
                 idiomasDestino.add(countryNames[toSpinnerMore.getSelectedItemPosition()]);
 //                if(layoutToSpinner.getChildCount() > 1){
 //                    lessLanguage.setVisibility(View.VISIBLE);
 //                }
+
+                // Obtener los idiomas en un array o string para despues
                 Log.d("IdiomaListAdd", idiomasDestino.toString());
 
                 toSpinnerMore.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -408,9 +413,23 @@ public class HumanTranslationFragment extends Fragment implements
 //                        }
 //                        idiomasDestino.remove(pos);
 //                        idiomasDestino.add(pos, countryNames[toSpinnerMore.getSelectedItemPosition()]);
-                        Log.d("IDIOMA", parent.getItemAtPosition(pos).toString());
-                        Log.d("IDIOMA", countryNames[pos]);
-//                        Log.d("IDIOMA", layoutToSpinner.get().toString()+"");
+
+//                        idiomasDestino.remove(layoutToSpinner.getChildAt(parent.getSelectedItemPosition()));
+//                        idiomasDestino.add(layoutToSpinner.getChildAt(parent.getSelectedItemPosition()), countryNames[pos]);
+
+                        Log.d("IDIOMAOO", parent.getChildAt(pos)+"");
+                        Log.d("IDIOMAOO", view.getId()+"");
+                        Log.d("IDIOMAOO", pos+"");
+                        Log.d("IDIOMAOO", l+"");
+                        Log.d("IDIOMA0", idiomasDestino.toString()+"-----------------------");
+                        Log.d("IDIOMA1", parent.getItemAtPosition(pos).toString());
+                        Log.d("IDIOMA2", countryNames[pos]);
+                        Log.d("IDIOMA3", toSpinnerMore.getCount()+"");
+                        Log.d("IDIOMA4", toSpinnerMore.getChildCount()+"");
+                        Log.d("IDIOMA5", layoutToSpinner.getChildCount()+"");
+                        Log.d("IDIOMA6", layoutToSpinner.getChildAt(parent.getSelectedItemPosition())+"");
+                        Log.d("IDIOMA7", parent.getSelectedItem()+"");
+                        Log.d("IDIOMA8", parent.getSelectedItemPosition()+"");
                     }
 
                     @Override
@@ -516,9 +535,6 @@ public class HumanTranslationFragment extends Fragment implements
 //        for(int i = 0; i<layoutToSpinner.getChildCount(); i++){
 //            layoutToSpinner.getChildAt(i);
 //        }
-
-
-
     }
 
     public void onNothingSelected(AdapterView<?> parent) {
@@ -594,9 +610,6 @@ public class HumanTranslationFragment extends Fragment implements
 
         Log.d("ElementsToSendHuman13", total_precio);
         Log.d("ElementsToSendHuman14", total_words);
-
-
-
 
     }
 
