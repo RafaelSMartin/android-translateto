@@ -219,5 +219,32 @@ public class Utils extends AppCompatActivity {
         return  contadorNombres;
     }
 
+    public static String trimEnd( String myString ) {
+        for ( int i = myString.length() - 1; i >= 0; --i ) {
+            if ( myString.charAt(i) == ' ' ) {
+                continue;
+            } else {
+                myString = myString.substring( 0, ( i + 1 ) );
+                break;
+            }
+        }
+        return myString;
+    }
+
+    public static String trimStart( String myString ) {
+        for ( int i = 0; i <= myString.length(); i++ ) {
+            if ( myString.charAt(i) == ' ' ) {
+                continue;
+
+            } else {
+                myString = myString.substring( i, ( myString.length() ) );
+                break;
+            }
+        }
+        Log.d("MainSendTrimStart", myString);
+        return myString;
+    }
+
+
 
 }

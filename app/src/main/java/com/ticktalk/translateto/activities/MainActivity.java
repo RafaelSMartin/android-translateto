@@ -52,18 +52,20 @@ import com.ticktalk.translateto.remote.model.SynonymsPojo;
 import org.jsoup.Jsoup;
 
 import java.util.Locale;
-import java.util.StringTokenizer;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import static com.ticktalk.translateto.utils.Utils.clearFirtsAndLast;
 import static com.ticktalk.translateto.utils.Utils.clearText;
+import static com.ticktalk.translateto.utils.Utils.contardorPalabras;
 import static com.ticktalk.translateto.utils.Utils.hideSoftKeyboard;
 import static com.ticktalk.translateto.utils.ArraySpinner.countryCodes;
 import static com.ticktalk.translateto.utils.ArraySpinner.countryNames;
 import static com.ticktalk.translateto.utils.ArraySpinner.flags;
 import static com.ticktalk.translateto.utils.Utils.isPar;
+import static com.ticktalk.translateto.utils.Utils.trimEnd;
+import static com.ticktalk.translateto.utils.Utils.trimStart;
 
 public class MainActivity extends AppCompatActivity implements
         Response.ErrorListener,
@@ -1021,43 +1023,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
 
-    public String trimEnd( String myString ) {
-        for ( int i = myString.length() - 1; i >= 0; --i ) {
-            if ( myString.charAt(i) == ' ' ) {
-                continue;
-            } else {
-                myString = myString.substring( 0, ( i + 1 ) );
-                break;
-            }
-        }
-        return myString;
-    }
 
-    public String trimStart( String myString ) {
-        for ( int i = 0; i <= myString.length(); i++ ) {
-            if ( myString.charAt(i) == ' ' ) {
-                continue;
-
-            } else {
-                myString = myString.substring( i, ( myString.length() ) );
-                break;
-            }
-        }
-        Log.d("MainSendTrimStart", myString);
-        return myString;
-    }
-
-    public int contardorPalabras(String contador){
-        //Cuento las palabras y si es una quito espacios finales y setto unaPalabra a true
-        StringTokenizer cantidadNombres = new StringTokenizer(contador, " ");
-        int contadorNombres = 0;
-        while (cantidadNombres.hasMoreTokens()) {
-            contadorNombres++;
-            cantidadNombres.nextToken();
-        }
-        Log.d("MainSendContador", String.valueOf(contadorNombres));
-        return  contadorNombres;
-    }
 
 
 }
