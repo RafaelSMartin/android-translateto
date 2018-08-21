@@ -197,7 +197,7 @@ public class Utils extends AppCompatActivity {
         return datosArray;
     }
 
-    public static Boolean paroImpar(int numero) {
+    public static Boolean isPar(int numero) {
         Boolean par;
         if (numero % 2 == 0) {
            par = true;

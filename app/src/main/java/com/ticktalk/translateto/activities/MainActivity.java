@@ -63,7 +63,7 @@ import static com.ticktalk.translateto.utils.Utils.hideSoftKeyboard;
 import static com.ticktalk.translateto.utils.ArraySpinner.countryCodes;
 import static com.ticktalk.translateto.utils.ArraySpinner.countryNames;
 import static com.ticktalk.translateto.utils.ArraySpinner.flags;
-import static com.ticktalk.translateto.utils.Utils.paroImpar;
+import static com.ticktalk.translateto.utils.Utils.isPar;
 
 public class MainActivity extends AppCompatActivity implements
         Response.ErrorListener,
@@ -308,7 +308,7 @@ public class MainActivity extends AppCompatActivity implements
 //        }
 
         animationView = (LottieAnimationView)findViewById(R.id.animation_view);
-
+        //Consulto si estoy logeado
         isLogged = SessionPrefs.get(this).isLoggedIn();
 
 
@@ -318,9 +318,9 @@ public class MainActivity extends AppCompatActivity implements
         initBanner();
 //        List<FromResult> fromResults = DatabaseManager.getInstance().getAllResult();
 
-
+        //Sets de los elementos del layout
         fromSpinner.setOnItemSelectedListener(this);
-
+        // Si mi lenguaje nativo es diferente de cero significa que he seleccionado uno previamente
         if (SessionPrefs.get(getApplicationContext()).getPrefNativeLanguage() != 0)
             fromSpinner.setSelection(SessionPrefs.get(getApplicationContext()).getPrefNativeLanguage());
 
@@ -328,9 +328,7 @@ public class MainActivity extends AppCompatActivity implements
 //        imageSpinner.setOnClickListener(this);
         animationSpinner.setOnClickListener(this);
         bSend.setOnClickListener(this);
-
         buttonHumanTranslation.setOnClickListener(this);
-
         favoriteAnimation.setOnClickListener(this);
 
         clear.setOnClickListener(this);
@@ -352,6 +350,7 @@ public class MainActivity extends AppCompatActivity implements
          * Listener EditText
          *
          * **/
+        //Oculto y pongo visibles los elementos dependiendo de como vaya escribiendo
         mEditText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -365,7 +364,6 @@ public class MainActivity extends AppCompatActivity implements
                     clear.setVisibility(View.VISIBLE);
                 }
             }
-
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 //if(mEditText.length()==0){
@@ -379,7 +377,6 @@ public class MainActivity extends AppCompatActivity implements
                // }
 
             }
-
             @Override
             public void afterTextChanged(Editable s) {
                 if(mEditText.length()==0){
@@ -394,6 +391,7 @@ public class MainActivity extends AppCompatActivity implements
             }
         });
 
+        // Si no tengo el foco escondo el teclado
         mEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View view, boolean hasFocus) {
@@ -409,12 +407,7 @@ public class MainActivity extends AppCompatActivity implements
     private void initToolbar(){
         toolbar.inflateMenu(R.menu.menu_toolbar);
         toolbar.setOnMenuItemClickListener(this);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v){
-                onBackPressed();
-            }
-        });
+        toolbar.setNavigationOnClickListener(v -> onBackPressed());
 
 //        if(!SessionPrefs.get(getApplicationContext()).isLoggedIn()){
 //            toolbar.setNavigationIcon(R.drawable.ic_arrow_back_24dp);
@@ -432,6 +425,7 @@ public class MainActivity extends AppCompatActivity implements
 //        });
     }
 
+    // Spinner personalizado con animacion por Lottie en json
     private void initSpinner(){
         animationSpinner.setAnimation("converter_arrows2.json");
         animationSpinner.loop(false);
@@ -468,6 +462,7 @@ public class MainActivity extends AppCompatActivity implements
         });
     }
 
+    //Desabilitado
     private void initBanner(){
 
 //        AdRequest adRequest2 = new AdRequest.Builder()
@@ -542,6 +537,7 @@ public class MainActivity extends AppCompatActivity implements
 
             case R.id.envia:
                 Utils.hideSoftKeyboard(v);
+                // Si los dos idiomas son iguales no muestro traduccion y aviso al ususario.
                 if (countryNames[fromSpinner.getSelectedItemPosition()].equals(countryNames[toSpinner.getSelectedItemPosition()]))
                 {
                     if(mEditText.getText().length() > 0)
@@ -552,6 +548,7 @@ public class MainActivity extends AppCompatActivity implements
                         Toast.makeText(this, "Change the language to translate!!", Toast.LENGTH_SHORT).show();
                     }
                 }else{
+                    // Si hay texto cargo los elementos y realizo el envio.
                     if(mEditText.getText().length() >0){
 
                         animationView.setVisibility(View.VISIBLE);
@@ -572,16 +569,16 @@ public class MainActivity extends AppCompatActivity implements
 
 //            case R.id.image_spinner:
             case R.id.animation_spinner:
-
+                //Cargo la animacion para un lado u otro dependiendo de la paridad.
 //                playRotateSwapAnimation(this, imageSpinner);
-                if (paroImpar(contadorAnimacionSpinner) ){
+                if (isPar(contadorAnimacionSpinner) ){
                     animationSpinner.playAnimation();
                     contadorAnimacionSpinner += 1;
                 } else{
                     animationSpinner.reverseAnimation();
                     contadorAnimacionSpinner += 1;
                 }
-
+                // Cona ayuda de aux intercambio las posiciones de los spinners
                 int aux = fromSpinner.getSelectedItemPosition();
                 fromSpinner.setSelection(toSpinner.getSelectedItemPosition());
                 toSpinner.setSelection(aux);
@@ -629,7 +626,7 @@ public class MainActivity extends AppCompatActivity implements
                     isFavorite = true;
                     fromResult.setFavoriteAnimation(true);
                 }
-
+                // acualizo la BD al seleccionar favoritos con booleano.
                 DatabaseManager.getInstance().updateFromResult(fromResult);
                 DatabaseManager.getInstance().getAllResult();
 
@@ -637,6 +634,7 @@ public class MainActivity extends AppCompatActivity implements
 
             case R.id.tts_traduced:
                 String ttsStringTraduced = mMessage.getText().toString();
+                // 1 To, 2 From -> asi reutilizo el metodo
                 setLocaleTTS(1);
                 ttSpeech.speak(ttsStringTraduced, TextToSpeech.QUEUE_FLUSH, null);
                 break;
@@ -676,6 +674,7 @@ public class MainActivity extends AppCompatActivity implements
                 break;
 
             case R.id.bh_translation:
+                // Para lanzar H.Translation es necesario que el usuario este logeado.
                 if(isLogged)
                     Utils.launchActivity(HumanTranslationActivity.class, MainActivity.this );
                 else
@@ -712,14 +711,12 @@ public class MainActivity extends AppCompatActivity implements
 //        titleCardReceive.setText(countryNames[toSpinner.getSelectedItemPosition()]);
         if (countryNames[fromSpinner.getSelectedItemPosition()].equals(countryNames[toSpinner.getSelectedItemPosition()]))
         {
+            // Anteriormente estaba invisible, pero se modifico por facilidad de uso.
             bSend.setVisibility(View.VISIBLE);
         } else{
 //            bSend.setVisibility(View.VISIBLE);
         }
         setLocaleTTS(0);
-
-
-
     }
 
     public void onNothingSelected(AdapterView<?> parent) {
@@ -805,6 +802,7 @@ public class MainActivity extends AppCompatActivity implements
 //        Log.d("MainSendCantidad", cantidadNombres+"");
         if(contadorPalabras == 1){
             unaPalabra = "true";
+            //Quito espacios
             sendMessageString = trimEnd(mEditText.getText().toString());
             sendMessageString = trimStart(sendMessageString);
         } else {
@@ -878,10 +876,8 @@ public class MainActivity extends AppCompatActivity implements
         Log.d("MainSendReceivedSynony1", receivedSynonyms);
 
 
-        // Recogemos la respuesta de los sinonimos provenientes del JOSN WebService
+        // Recogemos la respuesta de los sinonimos provenientes del JSON WebService
         modelSynonym = gsonSynonym.fromJson(receivedSynonyms, SynonymsPojo.class);
-
-
 
         if(unaPalabra.equals("true") && modelSynonym != null){
             if (modelSynonym.getWord().equals("")){
