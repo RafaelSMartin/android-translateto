@@ -79,8 +79,20 @@ public class HumanTranslationFragment extends Fragment implements
     @BindView(R.id.text_human_tranlation)
     EditText textHuman;
 
-    @BindView(R.id.more_spinner_human_translation)
-    Spinner toMoreSpinner;
+    @BindView(R.id.more_spinner_human_translation0)
+    Spinner toMoreSpinner0;
+
+    @BindView(R.id.more_spinner_human_translation1)
+    Spinner toMoreSpinner1;
+
+    @BindView(R.id.more_spinner_human_translation2)
+    Spinner toMoreSpinner2;
+
+    @BindView(R.id.more_spinner_human_translation3)
+    Spinner toMoreSpinner3;
+
+    @BindView(R.id.more_spinner_human_translation4)
+    Spinner toMoreSpinner4;
 
     @BindView(R.id.more_language)
     ImageView moreLanguage;
@@ -124,6 +136,7 @@ public class HumanTranslationFragment extends Fragment implements
     public static String instructions_language = "";
 
     private ArrayList<String> idiomasDestino = new ArrayList<String>();
+    private int cont = 0;
 
     @Override
     public void onAttach (Context context){
@@ -143,8 +156,7 @@ public class HumanTranslationFragment extends Fragment implements
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-    {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         view = inflater.inflate(R.layout.fragment_human_translation, container, false);
         ButterKnife.bind(this, view);
 
@@ -165,9 +177,7 @@ public class HumanTranslationFragment extends Fragment implements
 
         textHuman.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int start, int count, int after) {
-
-            }
+            public void beforeTextChanged(CharSequence charSequence, int start, int count, int after) {}
 
             @Override
             public void onTextChanged(CharSequence charSequence, int start, int before, int count) {
@@ -192,13 +202,9 @@ public class HumanTranslationFragment extends Fragment implements
             }
 
             @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
+            public void afterTextChanged(Editable editable) {}
         });
-
         submitOrder.setEnabled(false);
-
         return view;
     }
 
@@ -214,31 +220,73 @@ public class HumanTranslationFragment extends Fragment implements
         customAdapter = new CustomAdapter(activity, flags, countryNames, countryCodes, true);
         layoutToSpinner.setGravity(Gravity.CENTER);
         fromSpinner.setAdapter(customAdapter);
-        toMoreSpinner.setAdapter(customAdapter);
+        toMoreSpinner0.setAdapter(customAdapter);
+        toMoreSpinner1.setAdapter(customAdapter);
+        toMoreSpinner2.setAdapter(customAdapter);
+        toMoreSpinner3.setAdapter(customAdapter);
+        toMoreSpinner4.setAdapter(customAdapter);
 
         if (SessionPrefs.get(activity).getPrefNativeLanguage() != 0)
             fromSpinner.setSelection(SessionPrefs.get(activity).getPrefNativeLanguage());
 
-        idiomasDestino.add(countryNames[toMoreSpinner.getSelectedItemPosition()]);
+        idiomasDestino.add(countryNames[toMoreSpinner0.getSelectedItemPosition()]);
 
+        Log.d("idiomasDestinoOO", idiomasDestino.toString());
 
-        toMoreSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        toMoreSpinner0.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long l) {
                idiomasDestino.remove(0);
                idiomasDestino.add(0, countryNames[pos]);
-                Log.d("IDIOMA11", parent.getItemAtPosition(pos).toString());
-                Log.d("IDIOMA12", countryNames[pos]);
-                Log.d("IDIOMA13", toMoreSpinner.getCount()+"");
-                Log.d("IDIOMA14", toMoreSpinner.getChildCount()+"");
-                Log.d("IDIOMA15", idiomasDestino.toString());
+                Log.d("idiomasDestino0", idiomasDestino.toString());
 
             }
-
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
+            public void onNothingSelected(AdapterView<?> adapterView) {}
+        });
+        toMoreSpinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int pos, long l) {
+                idiomasDestino.remove(1);
+                idiomasDestino.add(1, countryNames[pos]);
+                Log.d("idiomasDestino1", idiomasDestino.toString());
 
             }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {}
+        });
+        toMoreSpinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int pos, long l) {
+                idiomasDestino.remove(2);
+                idiomasDestino.add(2, countryNames[pos]);
+                Log.d("idiomasDestino2", idiomasDestino.toString());
+
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {}
+        });
+        toMoreSpinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int pos, long l) {
+                idiomasDestino.remove(3);
+                idiomasDestino.add(3, countryNames[pos]);
+                Log.d("idiomasDestino3", idiomasDestino.toString());
+
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {}
+        });
+        toMoreSpinner4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int pos, long l) {
+                idiomasDestino.remove(4);
+                idiomasDestino.add(4, countryNames[pos]);
+                Log.d("idiomasDestino4", idiomasDestino.toString());
+
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {}
         });
 
         //get resources para las medidas del layout del spinner dean dp
@@ -378,11 +426,11 @@ public class HumanTranslationFragment extends Fragment implements
     //Listener para layout buttons
     @Override
     public void onLayoutChange(View view, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldright, int oldBottom) {
-        if(layoutToSpinner.getChildCount() > 1){
-            lessLanguage.setVisibility(View.VISIBLE);
-        } else{
-            lessLanguage.setVisibility(View.INVISIBLE);
-        }
+//        if(layoutToSpinner.getChildCount() > 1){
+//            lessLanguage.setVisibility(View.VISIBLE);
+//        } else{
+//            lessLanguage.setVisibility(View.INVISIBLE);
+//        }
     }
 
     @Override
@@ -390,32 +438,69 @@ public class HumanTranslationFragment extends Fragment implements
         switch (v.getId()) {
             //Boton que genera mas spinner
             case R.id.more_language:
-                toSpinnerMore = new Spinner(activity);
+                switch (cont) {
+                    case 0:
+                        toMoreSpinner1.setVisibility(View.VISIBLE);
+                        idiomasDestino.add(1, countryNames[toMoreSpinner1.getSelectedItemPosition()]);
+                        cont++;//1
+                        moreLanguage.setVisibility(View.VISIBLE);
+                        lessLanguage.setVisibility(View.VISIBLE);
+                        break;
+                    case 1:
+                        toMoreSpinner2.setVisibility(View.VISIBLE);
+                        idiomasDestino.add(2, countryNames[toMoreSpinner2.getSelectedItemPosition()]);
+                        cont++;//2
+                        moreLanguage.setVisibility(View.VISIBLE);
+                        lessLanguage.setVisibility(View.VISIBLE);
+                        break;
+                    case 2:
+                        toMoreSpinner3.setVisibility(View.VISIBLE);
+                        idiomasDestino.add(3, countryNames[toMoreSpinner3.getSelectedItemPosition()]);
+                        cont++;//3
+                        moreLanguage.setVisibility(View.VISIBLE);
+                        lessLanguage.setVisibility(View.VISIBLE);
+                        break;
+                    case 3:
+                        toMoreSpinner4.setVisibility(View.VISIBLE);
+                        idiomasDestino.add(4, countryNames[toMoreSpinner4.getSelectedItemPosition()]);
+                        cont++;//4
+                        moreLanguage.setVisibility(View.GONE);
+                        lessLanguage.setVisibility(View.VISIBLE);
+                        break;
+                }
+
+
+                /*toSpinnerMore = new Spinner(activity);
                 toSpinnerMore.setBackgroundResource(R.drawable.custom_spinner_background);
                 toSpinnerMore.setAdapter(customAdapter);
-                layoutToSpinner.addView(toSpinnerMore, layoutToSpinnerParams);
+                layoutToSpinner.addView(toSpinnerMore, layoutToSpinnerParams);*/
 
 //                toSpinnerMore.getChildAt()
 
-                idiomasDestino.add(countryNames[toSpinnerMore.getSelectedItemPosition()]);
+                /*idiomasDestino.add(countryNames[toSpinnerMore.getSelectedItemPosition()]);*/
 //                if(layoutToSpinner.getChildCount() > 1){
 //                    lessLanguage.setVisibility(View.VISIBLE);
 //                }
 
                 // Obtener los idiomas en un array o string para despues
-                Log.d("IdiomaListAdd", idiomasDestino.toString());
+                /*Log.d("IdiomaListAdd", idiomasDestino.toString());*/
 
-                toSpinnerMore.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+
+                /*toSpinnerMore.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> parent, View view, int pos, long l) {
-//                        for (int i = 0; i<layoutToSpinner.getChildCount(); i++){
-//
-//                        }
+                        for (int i = 0; i<layoutToSpinner.getChildCount(); i++){
+                            String position = layoutToSpinner.getChildAt(i).toString();
+                            Log.d("con un for", layoutToSpinner.getChildAt(i)+"------------------------");
+                        }
 //                        idiomasDestino.remove(pos);
 //                        idiomasDestino.add(pos, countryNames[toSpinnerMore.getSelectedItemPosition()]);
 
 //                        idiomasDestino.remove(layoutToSpinner.getChildAt(parent.getSelectedItemPosition()));
 //                        idiomasDestino.add(layoutToSpinner.getChildAt(parent.getSelectedItemPosition()), countryNames[pos]);
+
+                        Object obj = parent.getItemAtPosition(pos);
 
                         Log.d("IDIOMAOO", parent.getChildAt(pos)+"");
                         Log.d("IDIOMAOO", view.getId()+"");
@@ -436,11 +521,50 @@ public class HumanTranslationFragment extends Fragment implements
                     public void onNothingSelected(AdapterView<?> adapterView) {
 
                     }
-                });
+                });*/
                 break;
 
             case R.id.less_language:
-                if(layoutToSpinner.getChildCount() > 1){
+                switch (cont) {
+                    case 1:
+                        toMoreSpinner1.setVisibility(View.GONE);
+                        cont--;//0
+                        moreLanguage.setVisibility(View.VISIBLE);
+                        lessLanguage.setVisibility(View.GONE);
+                        idiomasDestino.remove(1);
+                        Log.d("idiomasDestino1Remove", idiomasDestino.toString());
+
+                        break;
+                    case 2:
+                        toMoreSpinner2.setVisibility(View.GONE);
+                        cont--;//1
+                        moreLanguage.setVisibility(View.VISIBLE);
+                        lessLanguage.setVisibility(View.VISIBLE);
+                        idiomasDestino.remove(2);
+                        Log.d("idiomasDestino2Remove", idiomasDestino.toString());
+
+                        break;
+                    case 3:
+                        toMoreSpinner3.setVisibility(View.GONE);
+                        cont--;//2
+                        moreLanguage.setVisibility(View.VISIBLE);
+                        lessLanguage.setVisibility(View.VISIBLE);
+                        idiomasDestino.remove(3);
+                        Log.d("idiomasDestino3Remove", idiomasDestino.toString());
+
+                        break;
+                    case 4:
+                        toMoreSpinner4.setVisibility(View.GONE);
+                        cont--;//3
+                        moreLanguage.setVisibility(View.VISIBLE);
+                        lessLanguage.setVisibility(View.VISIBLE);
+                        idiomasDestino.remove(4);
+                        Log.d("idiomasDestino4Remove", idiomasDestino.toString());
+
+                        break;
+
+                }
+                /*if(layoutToSpinner.getChildCount() > 1){
 //                    lessLanguage.setVisibility(View.VISIBLE);
                     int pos = layoutToSpinner.getChildCount() - 1;
                     View view = layoutToSpinner.getChildAt(pos);
@@ -452,7 +576,7 @@ public class HumanTranslationFragment extends Fragment implements
                 }
 //                else if(layoutToSpinner.getChildCount() == 1){
 //                    lessLanguage.setVisibility(View.INVISIBLE);
-//                }
+//                }*/
                 break;
 
             case R.id.submit_order:
@@ -550,8 +674,11 @@ public class HumanTranslationFragment extends Fragment implements
         language_source = countryNames[fromSpinner.getSelectedItemPosition()];
         language_source_pos = fromSpinner.getSelectedItemPosition();
 
-        language_target = countryNames[toMoreSpinner.getSelectedItemPosition()];
-        language_target_pos = toMoreSpinner.getSelectedItemPosition();
+        /*language_target = countryNames[toMoreSpinner.getSelectedItemPosition()];
+        language_target_pos = toMoreSpinner.getSelectedItemPosition();*/
+
+        //Idioma de destinos en string
+        language_target = idiomasDestino.toString();
 
 //        for(int i = 0; i>layoutToSpinner.getChildCount(); i++){
 //            layoutToSpinner.getChildAt(i);
@@ -563,8 +690,11 @@ public class HumanTranslationFragment extends Fragment implements
         if(textHuman.length()>0)
             text_translation = textHuman.getText().toString();
 
-        int numberLanguages = layoutToSpinner.getChildCount();
-        numero_language = String.valueOf(numberLanguages);
+        /*int numberLanguages = layoutToSpinner.getChildCount();
+        numero_language = String.valueOf(numberLanguages);*/
+
+        int numberLanguages = cont+1;
+        numero_language = String.valueOf(cont+1);
 
         if(textOptions.length()>0)
             instructions_language = textOptions.getText().toString();

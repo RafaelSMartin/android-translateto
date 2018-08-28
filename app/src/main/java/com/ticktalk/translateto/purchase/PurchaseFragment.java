@@ -76,7 +76,8 @@ public class PurchaseFragment extends Fragment implements
 
     private static final String CONFIG_CLIENT_ID =
 //            "AbNv_uDfHr13Q-JS3Td-IB1taAW5IT9_Iv8XOIt-Nbeoy_McgqDfzPOaD2oh1phTp6zsXHNtJU4ckElw";
-                "A-1BoYQl8TWUr0LobVP2Xr9V9pjGA-OXjmfKHqEYNXKcuGVejFpgXnbm";//for PaypalExample
+//                "A-1BoYQl8TWUr0LobVP2Xr9V9pjGA-OXjmfKHqEYNXKcuGVejFpgXnbm";
+    "AWD6mkXgFcC3GG0XMEHJx67mw82fKZo2bc2nchOlPhyYDMzaXHK7eoxUvtP-iUe2ozmKMjOui-Cpc-xB";//for PaypalExample
 
     private static final int PAYPAL_REQUEST_CODE = 7171; //request
 
@@ -272,14 +273,14 @@ public class PurchaseFragment extends Fragment implements
     private void processPayment(){
 
         /** Desabilitado hasta publicar **/
-//        PayPalPayment toBuy = new PayPalPayment(new BigDecimal(price), "USD",
-//                "TranslateTo", PayPalPayment.PAYMENT_INTENT_SALE);
-//
-//        Intent intent = new Intent(activity, PaymentActivity.class);
-//        intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, configuration);
-//        intent.putExtra(PaymentActivity.EXTRA_PAYMENT, toBuy);
-//
-//        startActivityForResult(intent, PAYPAL_REQUEST_CODE);
+        PayPalPayment toBuy = new PayPalPayment(new BigDecimal(price), "USD",
+                "TranslateTo", PayPalPayment.PAYMENT_INTENT_SALE);
+
+        Intent intent = new Intent(activity, PaymentActivity.class);
+        intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, configuration);
+        intent.putExtra(PaymentActivity.EXTRA_PAYMENT, toBuy);
+
+        startActivityForResult(intent, PAYPAL_REQUEST_CODE);
     }
 
     @Override

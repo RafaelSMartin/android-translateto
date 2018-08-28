@@ -108,11 +108,51 @@
                 app:layout_constraintTop_toBottomOf="@+id/text_to_language">
 
                 <android.support.v7.widget.AppCompatSpinner
-                    android:id="@+id/more_spinner_human_translation"
+                    android:id="@+id/more_spinner_human_translation0"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
                     android:layout_marginStart="16dp"
+                    android:background="@drawable/custom_spinner_background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+                <android.support.v7.widget.AppCompatSpinner
+                    android:id="@+id/more_spinner_human_translation1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:visibility="gone"
+                    android:background="@drawable/custom_spinner_background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+                <android.support.v7.widget.AppCompatSpinner
+                    android:id="@+id/more_spinner_human_translation2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:visibility="gone"
+                    android:background="@drawable/custom_spinner_background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+                <android.support.v7.widget.AppCompatSpinner
+                    android:id="@+id/more_spinner_human_translation3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:visibility="gone"
+                    android:background="@drawable/custom_spinner_background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+                <android.support.v7.widget.AppCompatSpinner
+                    android:id="@+id/more_spinner_human_translation4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:visibility="gone"
                     android:background="@drawable/custom_spinner_background"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
@@ -135,6 +175,7 @@
                 android:layout_height="24dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
+                android:animateLayoutChanges="true"
                 app:srcCompat="@drawable/minus"
                 app:layout_constraintEnd_toStartOf="@+id/text_to_language"
                 app:layout_constraintStart_toStartOf="parent"
@@ -146,6 +187,7 @@
                 android:layout_height="24dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
+                android:animateLayoutChanges="true"
                 app:srcCompat="@drawable/plus"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/text_to_language"
