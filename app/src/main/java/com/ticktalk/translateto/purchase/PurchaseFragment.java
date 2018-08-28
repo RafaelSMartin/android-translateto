@@ -213,7 +213,7 @@ public class PurchaseFragment extends Fragment implements
             textSourceLanguage.setText(target);
             textTraducedSourdeLanguage.setText(text);
 
-            imageTargetLanguage.setImageResource(flags[language_target_pos]);
+            imageTargetLanguage.setImageResource(R.drawable.icon_multi_language);
             textTargetLanguage.setText(source);
 
             textInstructionsPurchaseOptional.setText(instructions_language);

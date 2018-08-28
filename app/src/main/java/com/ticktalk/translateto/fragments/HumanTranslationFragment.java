@@ -191,8 +191,8 @@ public class HumanTranslationFragment extends Fragment implements
                 total_precio = String.valueOf((double)Math.round(precio*100d)/100d);
                 total_words = String.valueOf(numberWords);
 
-                // Habilitar el pago si es 3€
-                if(precio >= 3){
+                // Habilitar el pago si es mas de 1€
+                if(precio >= 1){
                     submitOrder.setEnabled(true);
                     submitOrder.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
                 } else{
