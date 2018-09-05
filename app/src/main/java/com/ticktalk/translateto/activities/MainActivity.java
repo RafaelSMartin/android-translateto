@@ -602,9 +602,9 @@ public class MainActivity extends AppCompatActivity implements
                 String copyString = mEditText.getText().toString();
                 if(copyString.length()>0){
                     Utils.setClipboard(this, copyString);
-                    Toast.makeText(this, "Texto copiado", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, getString(R.string.copy_text), Toast.LENGTH_SHORT).show();
                 } else{
-                    Toast.makeText(this, "Introduce texto", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, getString(R.string.insert_something), Toast.LENGTH_SHORT).show();
 
                 }
                 break;
@@ -613,7 +613,7 @@ public class MainActivity extends AppCompatActivity implements
                 if(mEditText.length()>0){
                     Utils.launchShare(v, mEditText.getText().toString(), MainActivity.this);
                 } else{
-                    Toast.makeText(this, "Introduce texto", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, getString(R.string.insert_something), Toast.LENGTH_SHORT).show();
                 }
                 break;
 
@@ -644,7 +644,7 @@ public class MainActivity extends AppCompatActivity implements
             case R.id.copy_traduced:
                 String copyStringTraduced = mMessage.getText().toString().trim();
                 Utils.setClipboard(this, copyStringTraduced);
-                Toast.makeText(this, "Traduccion copiado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.copy_traduction), Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.share_traduced:
@@ -664,7 +664,7 @@ public class MainActivity extends AppCompatActivity implements
             case R.id.copy_synonyms:
                 String copyStringSynonyms = mSynonyms.getText().toString().trim();
                 Utils.setClipboard(this, copyStringSynonyms);
-                Toast.makeText(this, "Synonimos copiado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.copy_synonyms), Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.share_synonyms:
@@ -840,7 +840,7 @@ public class MainActivity extends AppCompatActivity implements
         }
         animationView.cancelAnimation();
         animationView.setVisibility(View.GONE);
-        Toast.makeText(this, "Something has happened, try again please.", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getString(R.string.error_volley), Toast.LENGTH_SHORT).show();
         isReceived = false;
     }
 
@@ -957,7 +957,7 @@ public class MainActivity extends AppCompatActivity implements
         } else {
             cardReceive.setVisibility(View.INVISIBLE);
             cardSynonyms.setVisibility(View.INVISIBLE);
-            Toast.makeText(this, response+" algo ha ocurrido", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, response+" algo ha ocurrido", Toast.LENGTH_SHORT).show();
         }
 
         animationView.cancelAnimation();

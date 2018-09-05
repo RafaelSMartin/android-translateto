@@ -1,16 +1,15 @@
 <resources>
-    <string name="app_name">TranslateTo</string>
+    <string name="app_name" translatable="false">TranslateTo</string>
+    <string name="url_web" translatable="false">http://82.223.37.214/rest/rest.php</string>
 
-    <string name="url_web">http://82.223.37.214/rest/rest.php</string>
-
-    <string name="setting_button">setting</string>
-    <string name="history_search_button">history search</string>
-    <string name="first_language_spinner">First language</string>
-    <string name="second_language_spinner">Second language</string>
-    <string name="swap_button">swap language</string>
+    <string name="setting_button" translatable="false">setting</string>
+    <string name="history_search_button" translatable="false">history search</string>
+    <string name="first_language_spinner" translatable="false">First language</string>
+    <string name="second_language_spinner" translatable="false">Second language</string>
+    <string name="swap_button" translatable="false">swap language</string>
 
     <string name="one_account_allowed">One account allowed</string>
-    <string name="account_type">com.ticktalk.translateto</string>
+    <string name="account_type" translatable="false">com.ticktalk.translateto</string>
 
     <!--LoginActivity-->
     <string name="title">Log in to TranslateTo</string>
@@ -64,6 +63,15 @@
     <string name="send">Send</string>
     <string name="automatic_translate">Automatic Translate</string>
     <string name="human_translate">Human Translate</string>
+    <string name="write_something">Write something...</string>
+    <string name="insert_something">Insert text...</string>
+    <string name="request_ht">Request Human Translation</string>
+    <string name="synonyms">Synonyms</string>
+    <string name="copy_synonyms">copy Synonyms</string>
+    <string name="copy_text">copy Text</string>
+    <string name="copy_traduction">copy Translate</string>
+    <string name="error_volley">Something has happened, try again please.</string>
+
 
     <!--SettingActivity-->
     <string name="version">Version: %d</string>

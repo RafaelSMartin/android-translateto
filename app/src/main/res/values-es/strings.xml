@@ -1,0 +1,171 @@
+<resources>
+    <string name="one_account_allowed">Una cuenta permitida</string>
+
+    <!--LoginActivity-->
+    <string name="title">Iiniciar sesión en TranslateTo</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="forgot_pass">¿Olvidastes tu contraseña?</string>
+    <string name="sign">Registrate!</string>
+    <string name="sign_text">
+¿Necesitas traducciones más precisas? TranslateTo ofrece traducciones humanas con una precisión inmejorable. Regístrese para obtener una cuenta hoy y obtenga acceso a nuestro Servicio de traducción humana.
+                            Registrarse en una cuenta de translateTo le permite obtener traducciones humanas con una precisión inmejorable.
+                            ¿Eres multilingüe? ¡Regístrese para obtener una cuenta y conviértase en un traductor privado hoy!</string>
+    <string name="sign_up">Registro</string>
+    <string name="sign_up_text">¿No tienes cuenta aún? Crea una!</string>
+
+
+    <!--ForgotPassDialog-->
+    <string name="input">¿Olvidastes la contraseña?</string>
+    <string name="input_content_custominvalidation">Introduce tu email para enviar la contraseña</string>
+    <string name="input_hint">email</string>
+    <string name="submit">envial</string>
+    <string name="cancel">Cancelar</string>
+    <string name="toast_send_pass">Contraseña nueva enviada!!</string>
+
+    <!-- CustomDialog-->
+    <string name="custom_input">Cambiar</string>
+    <string name="custom_input_content_custominvalidation">Introduce texto para cambiar</string>
+    <string name="custom_input_hint">escribe para cambiar</string>
+    <string name="custom_submit">cambio</string>
+    <string name="custom_cancel">Cancelar</string>
+    <string name="custom_toast_send_pass">Nuevo cambio enviado!!</string>
+
+
+    <!--SignUpActivity-->
+    <string name="title_signup">Registro</string>
+    <string name="first_name">Nombre</string>
+    <string name="last_name">Apellido</string>
+    <string name="email">E-mail</string>
+    <string name="password">Contraseña</string>
+    <string name="confirm_pass">Confirma la contraseña</string>
+    <string name="login_text">¿Ya tienes cuenta? Registrate</string>
+    <string name="title_benefits">Sobre los beneficios...</string>
+    <string name="subtitle_human">Consigue Human Translations</string>
+    <string name="text_human">A veces, una traducción automática no es lo suficientemente precisa. Translateto.com ofrece traducciones humanas que tienen una precisión sin precedentes.</string>
+    <string name="subtile_favorites">Almacena tus Favoritos</string>
+    <string name="text_favorites">Guarde fácilmente y vuelva a sus traducciones favoritas, ¡ya sea que esté en su casa o mientras viaja!</string>
+    <string name="subtitle_history">Ver tu Historial</string>
+    <string name="text_history">Mire y recuerde sus traducciones anteriores.</string>
+    <string name="subtitle_community">Contribuye a la comunidad</string>
+    <string name="text_community">¿Tienes una mejor traducción? Ayuda a hacer Translateto.com más preciso al enviar traducciones más precisas.</string>
+
+
+    <!--MainActivity-->
+    <string name="send">Enviar</string>
+    <string name="automatic_translate">Traducción Automática</string>
+    <string name="human_translate">Traducción Humana</string>
+    <string name="write_something">Escriba algo...</string>
+    <string name="insert_something">Introduce texto...</string>
+    <string name="request_ht">Pide una Tranducción Humana</string>
+    <string name="synonyms">Sinónimos</string>
+    <string name="copy_synonyms">Sinónimos copiado</string>
+    <string name="copy_text">Texto copiado</string>
+    <string name="copy_traduction">Traducción copiada</string>
+    <string name="error_volley">Algo ha ocurrido, intentalo de nuevo.</string>
+
+
+
+
+    <!--SettingActivity-->
+    <string name="version">Version: %d</string>
+
+    <string name="general">General</string>
+    <string name="camera_translator">Camera Translator</string>
+    <string name="camera_translator_sub_text">Traduce a cualquier idioma desde tu cámara</string>
+    <string name="translate_voice">Translate Voice</string>
+    <string name="multiple_translator">Multilanguage Translator</string>
+    <string name="translate_voice_sub_text">Puedes mantener una conversación en cualquier idioma</string>
+    <string name="about">Sobre nosotros</string>
+    <string name="dictionary_app_name">Dictionary</string>
+    <string name="dictionary_package">com.ticktalk.dictionary</string>
+    <string name="see_more_app">Ver más apps</string>
+    <string name="see_more_app_sub_text">Ver todas nuestras apps</string>
+    <string name="website">Website</string>
+    <string name="website_link" translatable="false">https://translateto.com/</string>
+    <string name="contact_us">Contacta con nosotros</string>
+    <string name="contact_us_link" translatable="false">info@translateto.com</string>
+    <string name="contact_us_sub_text">Envianos tus problemas o sugerencias</string>
+    <string name="privacy_policy">Política de privacidad</string>
+    <string name="privacy_policy_url" translatable="false">https://translateto.com/policy</string>
+    <string name="dictionary_sub_text">Buscar definiciones de muchos idiomas</string>
+    <string name="multiple_translator_sub_text">Traduce a dos lenguajes al mismo tiempo</string>
+    <string name="triple_translator">Multi Language Translator</string>
+    <string name="triple_translator_package">com.ticktalk.tipletranslator</string>
+    <string name="translate_to">Translate To</string>
+    <string name="human_translation">Traducción Humana</string>
+    <string name="profile">Perfil</string>
+    <string name="log_out">Cerrar sesión</string>
+
+
+    <!--more_app_start-->
+    <string name="multi_dictionary_app_name">Multi Dictionary</string>
+    <string name="easy_translator">Fast and Easy\nTranslator</string>
+    <string name="multi_translator">Multi Language\nTranslator</string>
+    <string name="es_en_translator">English - Spanish\nTranslator</string>
+    <string name="cam_scanner">Cam Scanner</string>
+    <string name="pdf_converter">PDF Converter</string>
+    <string name="image_converter">Image Converter</string>
+    <string name="mp3_converter">MP3 Converter</string>
+    <string name="video_converter">Video Converter</string>
+
+    <string name="more_dictionary_sub_text">Más de 700 diccionarios en múltiples idiomas. Servicio en línea y fuera de línea</string>
+    <string name="more_camera_sub_text">Traduce y escanea texto de fotos y documentos en cualquier formato. Reconocimiento de OCR + creador de PDF</string>
+    <string name="more_multi_sub_text">Traduzca tres idiomas simultáneamente. El mejor traductor del mundo</string>
+    <string name="more_easy_sub_text">Acceso rápido y traducción inmediata. El traductor más útil</string>
+    <string name="more_esen_sub_text">Impresionante traductor de voz español - inglés y viceversa</string>
+    <string name="more_cam_scanner_sub_text">Escanee, convierta y traduzca todos sus documentos a PDF. La herramienta perfecta para trabajos de oficina</string>
+    <string name="more_pdf_converter_sub_text">Convierta los archivos de documentos más populares\nPDF, Doc, XLS, PPT ...</string>
+    <string name="more_image_converter_sub_text">Convierte los archivos de imagen más populares\nJPG, PNG, GIF, BMP, EPS, PDF ...</string>
+    <string name="more_mp3_converter_sub_text">Convierta los archivos de música más populares\nMP3, OGG, FLAC, WAV, WMA, AAC, M4A ...</string>
+    <string name="more_video_converter_sub_text">Convierta los archivos multimedia más populares\nMP3, AVI, MPEG, GIF, FLV, WMV, MP4 ...</string>
+    <!--more_app_end-->
+
+
+    <!--HumanTranslationActivity-->
+    <string name="title_human_translation">Ordene una traducción humana</string>
+    <string name="hint_human_translation">Escribe o pega tu texto</string>
+    <string name="text_source_language">Lenguaje origen</string>
+    <string name="text_to_language">Lenguaje(s) objetivo(s)</string>
+    <string name="text_instructions">Instrucciones para traductor (Opcional)</string>
+    <string name="sub_text_instructions">Indique cualquier nota importante para el traductor.</string>
+    <string name="text_please">Complete los siguientes campos para completar su pedido.</string>
+    <string name="topic">Tema</string>
+    <string name="text_topic">¿Qué tema encaja mejor?</string>
+    <string name="tone">Tono</string>
+    <string name="text_tone">¿Cuál es la voz / estado de ánimo?</string>
+    <string name="author">Género</string>
+    <string name="text_author">¿Qué género está hablando?</string>
+    <string name="audience">Audiencia</string>
+    <string name="text_audience">¿Qué género está recibiendo?</string>
+
+    <string name="submit_order">Orden de envio</string>
+
+
+    <!--<ProfileActivityfile-->
+    <string name="native_language">Lenguaje nativo</string>
+    <string name="old_password">Password antiguo</string>
+    <string name="new_password">Password nuevo</string>
+    <string name="confirm_password">Confirma Password</string>
+    <string name="form_fname">Introduce un nombre válido</string>
+    <string name="form_lname">Introduce un apellido válido</string>
+    <string name="form_email">Introduce un email válido</string>
+    <string name="form_pass">Introduce una contraseña válido</string>
+    <string name="form_confirm_pass">Confirmar contraseña incorrecta</string>
+    <string name="url_profile" translatable="false">https://translateto.com/profile</string>
+    <string name="password_cod" translatable="false">********</string>
+
+
+    <!-- History -->
+    <string name="all_history_has_been_cleared">Toda el historial ha sido limpiado.</string>
+    <string name="clear_history_question">¿Estas seguro que quieres limpiar el historial?</string>
+    <string name="Ok">Ok</string>
+    <string name="no">No</string>
+    <string name="yes">Si</string>
+
+
+    <!-- Billing -->
+    <string name="base_64_key" translatable="false">insert from google console</string>
+
+
+
+</resources>
