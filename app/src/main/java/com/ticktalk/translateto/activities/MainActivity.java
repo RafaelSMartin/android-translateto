@@ -76,12 +76,7 @@ public class MainActivity extends AppCompatActivity implements
         TextToSpeech.OnInitListener
 {
 
-//    @BindView(R.id.card_loading)
-//    CardView cardLoading;
-
-//    @BindView(R.id.animation_view)
     public static LottieAnimationView animationView;
-
 
     @BindView(R.id.constraint_layout)
     ConstraintLayout constraintLayout;
@@ -100,9 +95,6 @@ public class MainActivity extends AppCompatActivity implements
 
     @BindView(R.id.to_spinner)
     Spinner toSpinner;
-
-//    @BindView(R.id.image_spinner)
-//    ImageView imageSpinner;
 
     @BindView(R.id.animation_spinner)
     LottieAnimationView animationSpinner;
@@ -143,14 +135,8 @@ public class MainActivity extends AppCompatActivity implements
     @BindView(R.id.bh_translation)
     Button buttonHumanTranslation;
 
-//    @BindView(R.id.linear_buttons)
-//    LinearLayout linearButtons;
-
     @BindView(R.id.envia)
     Button bSend;
-
-//    @BindView(R.id.shimmer_layout_button_human)
-//    ShimmerFrameLayout shimmerButtonHumanTranslation;
 
     @BindView(R.id.mensaje)
     TextView mMessage;
@@ -206,9 +192,6 @@ public class MainActivity extends AppCompatActivity implements
     private int contadorAnimacionSpinner = 0;
 
 
-//    @BindView(R.id.adView)
-//    AdView mAdView;
-
     /**
      *
      * Save traductions from translateto.com
@@ -246,7 +229,6 @@ public class MainActivity extends AppCompatActivity implements
     }
 
 
-
     /**
      *
      * TTS
@@ -254,7 +236,6 @@ public class MainActivity extends AppCompatActivity implements
      * */
     @Override
     public void onInit(int status) {
-
         if(status==TextToSpeech.SUCCESS){
             setLocaleTTS(0);
         }else{
@@ -263,18 +244,16 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     public void setLocaleTTS(int modeSpinner){
-        String language, country;
+        String country;
         if (modeSpinner == 1){
              country = countryCodes[toSpinner.getSelectedItemPosition()];
         } else{
              country = countryCodes[fromSpinner.getSelectedItemPosition()];
         }
-
         Locale locale = new Locale(country);
         int result = ttSpeech.setLanguage(locale);
         if(result==TextToSpeech.LANG_MISSING_DATA || result==TextToSpeech.LANG_NOT_SUPPORTED ){
             Log.e("TTS","this lang is not supported");
-        }else {
         }
     }
 
@@ -295,30 +274,13 @@ public class MainActivity extends AppCompatActivity implements
         //Crea variable tts
         ttSpeech  = new TextToSpeech(this,this);
 
-
-        //Activo la animacion del brillo del boton
-//        shimmerButtonHumanTranslation.setBaseAlpha(0.5f);
-//        shimmerButtonHumanTranslation.setDuration(1000);
-//        shimmerButtonHumanTranslation.setRepeatDelay(1000);
-//        shimmerButtonHumanTranslation.startShimmerAnimation();
-
-
-//        if(!SessionPrefs.get(this).isLoggedIn()){
-//            launchActivityLoggedIn(LoginActivity.class);
-//            finish();
-//            return;
-//        }
-
         animationView = (LottieAnimationView)findViewById(R.id.animation_view);
         //Consulto si estoy logeado
         isLogged = SessionPrefs.get(this).isLoggedIn();
 
-
         initToolbar();
         initSpinner();
-//        initTTS();
         initBanner();
-//        List<FromResult> fromResults = DatabaseManager.getInstance().getAllResult();
 
         //Sets de los elementos del layout
         fromSpinner.setOnItemSelectedListener(this);
@@ -327,7 +289,6 @@ public class MainActivity extends AppCompatActivity implements
             fromSpinner.setSelection(SessionPrefs.get(getApplicationContext()).getPrefNativeLanguage());
 
         toSpinner.setOnItemSelectedListener(this);
-//        imageSpinner.setOnClickListener(this);
         animationSpinner.setOnClickListener(this);
         bSend.setOnClickListener(this);
         buttonHumanTranslation.setOnClickListener(this);
@@ -373,11 +334,6 @@ public class MainActivity extends AppCompatActivity implements
                     bSend.setVisibility(View.VISIBLE);
                     cardReceive.setVisibility(View.INVISIBLE);
                     clear.setVisibility(View.INVISIBLE);
-                //}else{
-               //     bSend.setVisibility(View.VISIBLE);
-               //     clear.setVisibility(View.VISIBLE);
-               // }
-
             }
             @Override
             public void afterTextChanged(Editable s) {
@@ -394,12 +350,9 @@ public class MainActivity extends AppCompatActivity implements
         });
 
         // Si no tengo el foco escondo el teclado
-        mEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View view, boolean hasFocus) {
-                if(!hasFocus){
-                    hideSoftKeyboard(view);
-                }
+        mEditText.setOnFocusChangeListener((view, hasFocus) -> {
+            if(!hasFocus){
+                hideSoftKeyboard(view);
             }
         });
 
@@ -410,21 +363,6 @@ public class MainActivity extends AppCompatActivity implements
         toolbar.inflateMenu(R.menu.menu_toolbar);
         toolbar.setOnMenuItemClickListener(this);
         toolbar.setNavigationOnClickListener(v -> onBackPressed());
-
-//        if(!SessionPrefs.get(getApplicationContext()).isLoggedIn()){
-//            toolbar.setNavigationIcon(R.drawable.ic_arrow_back_24dp);
-//
-//        }
-//        toolbar.setNavigationOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v){
-//                if(SessionPrefs.get(getApplicationContext()).isLoggedIn()){
-//
-//                }else{
-//                    launchActivityLoggedIn(LoginActivity.class);
-//                }
-//            }
-//        });
     }
 
     // Spinner personalizado con animacion por Lottie en json
@@ -432,13 +370,9 @@ public class MainActivity extends AppCompatActivity implements
         animationSpinner.setAnimation("converter_arrows2.json");
         animationSpinner.loop(false);
         animationSpinner.setSpeed(.8f);
-//        animationSpinner.setRotation(90);
-
         favoriteAnimation.setAnimation("favourite_animation.json");
         favoriteAnimation.loop(false);
 
-//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.speak_language_array, android.R.layout.simple_spinner_item);
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         CustomAdapter customAdapterLeft = new CustomAdapter(getApplicationContext(),flags, countryNames, countryCodes, true);
         fromSpinner.setAdapter(customAdapterLeft);
 
@@ -447,26 +381,21 @@ public class MainActivity extends AppCompatActivity implements
 
         CustomAdapter customAdapterRight = new CustomAdapter(getApplicationContext(),flags, countryNames, countryCodes, false);
         toSpinner.setAdapter(customAdapterRight);
-
         titleCardSend.setText(countryNames[fromSpinner.getSelectedItemPosition()]);
 
     }
 
     private void initTTS(){
-        textToSpeech=new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
-                if(status != TextToSpeech.ERROR) {
-                    setLocaleTTS(0);
+        textToSpeech=new TextToSpeech(getApplicationContext(), status -> {
+            if(status != TextToSpeech.ERROR) {
+                setLocaleTTS(0);
 //                    textToSpeech.setLanguage(Locale.getDefault());//dependera del spinner
-                }
             }
         });
     }
 
     //Desabilitado
     private void initBanner(){
-
 //        AdRequest adRequest2 = new AdRequest.Builder()
 //                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
 //                .addTestDevice("29861D979359C2239096D26FCB065DD6") // note 3
@@ -511,21 +440,17 @@ public class MainActivity extends AppCompatActivity implements
 //                // to the app after tapping on an ad.
 //            }
 //        });
-
     }
 
     @Override
     public boolean onMenuItemClick(MenuItem item) {
         switch (item.getItemId()) {
-
             case R.id.setting:
                 SettingActivity.startSettingActivity(this);
                 break;
-
             case R.id.history:
                 HistoryActivity.startHistoryActivity(this);
                 break;
-
             case R.id.favorite:
                 FavoriteActivity.startFavoriteActivity(this);
                 break;
@@ -552,12 +477,10 @@ public class MainActivity extends AppCompatActivity implements
                 }else{
                     // Si hay texto cargo los elementos y realizo el envio.
                     if(mEditText.getText().length() >0){
-
                         animationView.setVisibility(View.VISIBLE);
                         animationView.setAnimation("loading_translating.json");
                         animationView.loop(true);
                         animationView.playAnimation();
-
                         if(isFavorite){
                             favoriteAnimation.reverseAnimation();
                             isFavorite = false;
@@ -568,11 +491,8 @@ public class MainActivity extends AppCompatActivity implements
                     }
                 }
                 break;
-
-//            case R.id.image_spinner:
             case R.id.animation_spinner:
                 //Cargo la animacion para un lado u otro dependiendo de la paridad.
-//                playRotateSwapAnimation(this, imageSpinner);
                 if (isPar(contadorAnimacionSpinner) ){
                     animationSpinner.playAnimation();
                     contadorAnimacionSpinner += 1;
@@ -587,17 +507,14 @@ public class MainActivity extends AppCompatActivity implements
 
                 titleCardSend.setText(countryNames[fromSpinner.getSelectedItemPosition()]);
                 break;
-
             case R.id.clear:
                 clearText(mEditText);
                 break;
-
             case R.id.tts:
                 String ttsString = mEditText.getText().toString();
                 setLocaleTTS(0);
                 ttSpeech.speak(ttsString, TextToSpeech.QUEUE_FLUSH, null);
                 break;
-
             case R.id.copy:
                 String copyString = mEditText.getText().toString();
                 if(copyString.length()>0){
@@ -605,10 +522,8 @@ public class MainActivity extends AppCompatActivity implements
                     Toast.makeText(this, getString(R.string.copy_text), Toast.LENGTH_SHORT).show();
                 } else{
                     Toast.makeText(this, getString(R.string.insert_something), Toast.LENGTH_SHORT).show();
-
                 }
                 break;
-
             case R.id.share:
                 if(mEditText.length()>0){
                     Utils.launchShare(v, mEditText.getText().toString(), MainActivity.this);
@@ -616,7 +531,6 @@ public class MainActivity extends AppCompatActivity implements
                     Toast.makeText(this, getString(R.string.insert_something), Toast.LENGTH_SHORT).show();
                 }
                 break;
-
             case R.id.favourite_amimation:
                 if(isFavorite){
                     favoriteAnimation.reverseAnimation();
@@ -631,22 +545,18 @@ public class MainActivity extends AppCompatActivity implements
                 // acualizo la BD al seleccionar favoritos con booleano.
                 DatabaseManager.getInstance().updateFromResult(fromResult);
                 DatabaseManager.getInstance().getAllResult();
-
                 break;
-
             case R.id.tts_traduced:
                 String ttsStringTraduced = mMessage.getText().toString();
                 // 1 To, 2 From -> asi reutilizo el metodo
                 setLocaleTTS(1);
                 ttSpeech.speak(ttsStringTraduced, TextToSpeech.QUEUE_FLUSH, null);
                 break;
-
             case R.id.copy_traduced:
                 String copyStringTraduced = mMessage.getText().toString().trim();
                 Utils.setClipboard(this, copyStringTraduced);
                 Toast.makeText(this, getString(R.string.copy_traduction), Toast.LENGTH_SHORT).show();
                 break;
-
             case R.id.share_traduced:
                 if(mMessage.length()>0){
                     Utils.launchShare(v, mMessage.getText().toString(), MainActivity.this);
@@ -654,19 +564,16 @@ public class MainActivity extends AppCompatActivity implements
                     Toast.makeText(this, "No hay traduccion para compartir", Toast.LENGTH_SHORT).show();
                 }
                 break;
-
             case R.id.tts_synonyms:
                 String ttsStringSynonyms = mSynonyms.getText().toString();
                 setLocaleTTS(0);
                 ttSpeech.speak(ttsStringSynonyms, TextToSpeech.QUEUE_FLUSH, null);
                 break;
-
             case R.id.copy_synonyms:
                 String copyStringSynonyms = mSynonyms.getText().toString().trim();
                 Utils.setClipboard(this, copyStringSynonyms);
                 Toast.makeText(this, getString(R.string.copy_synonyms), Toast.LENGTH_SHORT).show();
                 break;
-
             case R.id.share_synonyms:
                 if(mSynonyms.length()>0){
                     Utils.launchShare(v, mSynonyms.getText().toString(), MainActivity.this);
@@ -674,25 +581,20 @@ public class MainActivity extends AppCompatActivity implements
                     Toast.makeText(this, "No hay synonimos para compartir", Toast.LENGTH_SHORT).show();
                 }
                 break;
-
             case R.id.bh_translation:
                 // Para lanzar H.Translation es necesario que el usuario este logeado.
                 if(isLogged)
                     Utils.launchActivity(HumanTranslationActivity.class, MainActivity.this );
                 else
-//                    Utils.launchActivity(LoginForm.class, MainActivity.this);
                     LoginActivity.startLoginActivity(this);
 
                 break;
-
             case R.id.text_human_translation:
                 if(isLogged)
                     Utils.launchActivity(HumanTranslationActivity.class, MainActivity.this );
                 else
-//                    Utils.launchActivity(LoginForm.class, MainActivity.this);
                     LoginActivity.startLoginActivity(this);
                 break;
-
             default:
                 break;
         }
@@ -704,26 +606,17 @@ public class MainActivity extends AppCompatActivity implements
      * Spinner
      *
      ***/
-
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-        // An item was selected. You can retrieve the selected item using
-        // parent.getItemAtPosition(pos)
-
         titleCardSend.setText(countryNames[fromSpinner.getSelectedItemPosition()]);
-//        titleCardReceive.setText(countryNames[toSpinner.getSelectedItemPosition()]);
         if (countryNames[fromSpinner.getSelectedItemPosition()].equals(countryNames[toSpinner.getSelectedItemPosition()]))
         {
             // Anteriormente estaba invisible, pero se modifico por facilidad de uso.
             bSend.setVisibility(View.VISIBLE);
-        } else{
-//            bSend.setVisibility(View.VISIBLE);
         }
         setLocaleTTS(0);
     }
 
-    public void onNothingSelected(AdapterView<?> parent) {
-        // Another interface callback
-    }
+    public void onNothingSelected(AdapterView<?> parent) {}
 
 
     /**
@@ -731,18 +624,8 @@ public class MainActivity extends AppCompatActivity implements
      * Request WebServices Volley methods
      *
      * */
-
     //Se envian los datos al WebService
     private void sendText(){
-
-//        progressBar = new ProgressBar(MainActivity.this, null,
-//                android.R.attr.progressBarStyle);
-//        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(100, 100);
-//        params.addRule(RelativeLayout.CENTER_HORIZONTAL);
-//        params.addRule(RelativeLayout.CENTER_VERTICAL);
-//
-//        rootConstraintLayout.addView(progressBar, params);
-
         // Desabilito el touch
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
                 WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
@@ -766,42 +649,8 @@ public class MainActivity extends AppCompatActivity implements
         String sendFromCodesSpinner = countryCodes[fromSpinner.getSelectedItemPosition()];
         String sendToCodesSpinner = countryCodes[toSpinner.getSelectedItemPosition()];
 
-        Log.d("MainSendAccess", access);
-        Log.d("MainSendMensaje", sendMessageString);
-        Log.d("MainSendFromSpinner", sendFromSpinner);
-        Log.d("MainSendToSpinner", sendToSpinner);
-        Log.d("MainSendToken", keyToken);
-        Log.d("MainSendFromCodeSpinner", sendFromCodesSpinner);
-        Log.d("MainSendToCodeSpinner", sendToCodesSpinner);
-
-
-//        Log.d("MainSendToCodeSpinner", localeTo.getCountry());
-//        Log.d("MainSendToCodeSpinner", localeTo.getLanguage());
-//        Log.d("MainSendToCodeSpinner", localeTo.getDisplayCountry());
-//        Log.d("MainSendToCodeSpinner", localeTo.getDisplayLanguage());
-//        Log.d("MainSendToCodeSpinner", localeTo.getDisplayName());
-//        Log.d("MainSendToCodeSpinner", localeTo.getISO3Country());
-//        Log.d("MainSendToCodeSpinner", localeTo.getISO3Language());
-
-
-
-        // Cuento las palabras y si es una quito espacios finales y setto unaPalabra a true
-//        String temp[] = mEditText.getText().toString().split(" ");
-//        cantidadNombres = temp.length;
-
-        //Cuento las palabras y si es una quito espacios finales y setto unaPalabra a true
-//        StringTokenizer cantidadNombres = new StringTokenizer(sendMessageString, " ");
-//        int contadorNombres=0;
-//        while (cantidadNombres.hasMoreTokens()) {
-//            contadorNombres++;
-//            cantidadNombres.nextToken();
-//        }
-//        Log.d("MainSendContador", String.valueOf(contadorNombres));
-
-
         int contadorPalabras = contardorPalabras(sendMessageString);
 
-//        Log.d("MainSendCantidad", cantidadNombres+"");
         if(contadorPalabras == 1){
             unaPalabra = "true";
             //Quito espacios
@@ -847,7 +696,6 @@ public class MainActivity extends AppCompatActivity implements
     //Recibimos un tipo string y deberemos convertirlo a objeto
     @Override
     public void onResponse(String response) {
-
         //Creacion del GSON builder
         GsonBuilder builder = new GsonBuilder();
         //Convertir texto a JSON y viceversa
@@ -856,27 +704,17 @@ public class MainActivity extends AppCompatActivity implements
         Gson gson = builder.create();
         Gson gsonSynonym = builder.create();
 
-        Log.d("MainSend", response+"");
-
-
         // Recogemos la respuesta del WebService
         model = gson.fromJson(response, MessagePojo.class);
-
 
         String keyTokenFromServer = model.getKeyToken();
         Log.d("MainSendToken", keyTokenFromServer+"");
 
-
         receivedCodMessage = model.getCodMessage();
         received = model.getFindEnd();
         String receivedMessageAux = model.getTraducedText();
-//        CharSequence receivedMessage = Html.fromHtml(receivedMessage2);
         receivedMessage = Jsoup.parse(receivedMessageAux).text();
-//        receivedMessage = charSequence;
         receivedSynonyms = model.getSynonyms();
-
-        Log.d("MainSendReceivedSynony1", receivedSynonyms);
-
 
         // Recogemos la respuesta de los sinonimos provenientes del JSON WebService
         modelSynonym = gsonSynonym.fromJson(receivedSynonyms, SynonymsPojo.class);
@@ -884,33 +722,18 @@ public class MainActivity extends AppCompatActivity implements
         if(unaPalabra.equals("true") && modelSynonym != null){
             if (modelSynonym.getWord().equals("")){
                 receivedSynonyms = "No hay sinonimos";
-                Log.d("MainSendUnaPalabraSynon", modelSynonym.getSynonyms()+"");
             }else{
                 receivedSynonyms = modelSynonym.getSynonyms().toString();
-                Log.d("MainSendUnaPalabraSynon", modelSynonym.getSynonyms()+"");
             }
         } else{
             receivedSynonyms = "";
         }
 
-
-//        String languageOrigin = model.getLanguageOrigin();
-//        String languageFinal = model.getLanguageFinal();
-
-        //La web
-        Log.d("MainSendReceived", received);
-        Log.d("MainSendRecivCodMessage", receivedCodMessage);
-        Log.d("MainSendReceivedMessage", receivedMessage+"");
-        Log.d("MainSendReceivedSynony2", receivedSynonyms);
-
         //habilito el touch
         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
 
-
         if(received.equals("200")) {
-
             isReceived = true;
-//            cardLoading.setVisibility(View.GONE);
 
             cardReceive.setVisibility(View.VISIBLE);
             mMessage.setText(receivedMessage);
@@ -942,7 +765,6 @@ public class MainActivity extends AppCompatActivity implements
                 DatabaseManager.getInstance().setClearedDatabase(false);
             }
 
-
             if(receivedSynonyms.equals("No hay sinonimos") || receivedSynonyms.equals("[]") || receivedSynonyms == null || receivedSynonyms.equals("")){
                 mSynonyms.setText("");
                 cardSynonyms.setVisibility(View.INVISIBLE);
@@ -953,13 +775,10 @@ public class MainActivity extends AppCompatActivity implements
                 titleCardReceive.setText(countryNames[toSpinner.getSelectedItemPosition()]);
                 mSynonyms.setVisibility(View.VISIBLE);
             }
-
         } else {
             cardReceive.setVisibility(View.INVISIBLE);
             cardSynonyms.setVisibility(View.INVISIBLE);
-//            Toast.makeText(this, response+" algo ha ocurrido", Toast.LENGTH_SHORT).show();
         }
-
         animationView.cancelAnimation();
         animationView.setVisibility(View.GONE);
 
@@ -976,23 +795,18 @@ public class MainActivity extends AppCompatActivity implements
         initTTS();
         if (SessionPrefs.get(getApplicationContext()).getPrefNativeLanguage() != 0) {
             fromSpinner.setSelection(SessionPrefs.get(getApplicationContext()).getPrefNativeLanguage());
-        } else {
-//            fromSpinner.setSelection(0);
         }
+
         titleCardSend.setText(countryNames[fromSpinner.getSelectedItemPosition()]);
 
         if(restoreData){
             bSend.setVisibility(View.VISIBLE);
-//            cardReceive.setVisibility(View.VISIBLE);
-//            cardSynonyms.setVisibility(View.VISIBLE);
         } else{
             clearText(mEditText);
             bSend.setVisibility(View.VISIBLE);
             cardReceive.setVisibility(View.INVISIBLE);
             cardSynonyms.setVisibility(View.INVISIBLE);
         }
-
-
         if (cardReceive.getVisibility() == View.VISIBLE) {
             if (fromResult.getFavoriteAnimation()) {
                 favoriteAnimation.playAnimation();
@@ -1000,29 +814,16 @@ public class MainActivity extends AppCompatActivity implements
                 favoriteAnimation.reverseAnimation();
             }
         }
-
-    }
-
-    @Override
-    public void onPause(){
-//        if(textToSpeech !=null){
-//            textToSpeech.stop();
-//            textToSpeech.shutdown();
-//        }
-        super.onPause();
     }
 
     @Override
     public void onDestroy(){
         super.onDestroy();
-
         if(ttSpeech !=null){
             ttSpeech.stop();
             ttSpeech.shutdown();
         }
     }
-
-
 
 
 
