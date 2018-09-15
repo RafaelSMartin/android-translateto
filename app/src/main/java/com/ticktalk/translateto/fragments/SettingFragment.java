@@ -282,7 +282,17 @@ public class SettingFragment extends MaterialAboutFragment implements Response.E
 
                 Toast.makeText(myContext, "Log out success", Toast.LENGTH_SHORT).show();
                 Utils.launchActivity(MainActivity.class, getActivity());
-            } else{
+            }
+            else if(model.getFindEnd().equals("201")){
+                //Apaño hasta que el servidor funcione correctamente
+                SessionPrefs.get(myContext).logOut();
+                boolean mLoggedIn = SessionPrefs.get(myContext).isLoggedIn();
+                Log.d("LogOut4", mLoggedIn+"" );
+
+                Toast.makeText(myContext, "Log out success", Toast.LENGTH_SHORT).show();
+                Utils.launchActivity(MainActivity.class, getActivity());
+            }
+            else{
                 Toast.makeText(myContext, "Error interno", Toast.LENGTH_SHORT).show();
             }
         }
